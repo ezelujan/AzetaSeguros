@@ -1,0 +1,29 @@
+{
+  "name": "azeta-seguros",
+  "version": "1.0.0",
+  "private": true,
+  "description": "azeta-seguros",
+  "author": "Ezequiel Luján Escobar",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "gatsby": "^4.24.4",
+    "gatsby-plugin-emotion": "^7.24.0",
+    "gatsby-plugin-image": "^2.24.0",
+    "gatsby-plugin-sharp": "^4.24.0",
+    "gatsby-source-datocms": "^4.0.4",
+    "gatsby-transformer-sharp": "^4.24.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}
