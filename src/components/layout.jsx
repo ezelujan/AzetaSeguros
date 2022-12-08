@@ -16,11 +16,17 @@ const Layout = (props) => {
         <>
             <Global 
                 styles={css`
+                    :root {
+                        --bgHeader: #ECEEFF;
+                        --orange: #F76031;
+                    }
                     html {
                         font-size: 62.5%;
                         box-sizing: border-box;
                     }
                     *, *:before, *:after {
+                        padding: 0;
+                        margin: 0;
                         box-sizing: inherit;
                     }
                     body {
@@ -43,9 +49,6 @@ const Layout = (props) => {
             <Helmet>
                 <title>{title}</title>
                 <meta name="description" content={description}/>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                {/* <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet" /> */}
             </Helmet>
 
             <Header />

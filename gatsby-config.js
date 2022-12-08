@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `AzetaSeguros`,
-    description: 'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, voluptatem.',
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: [
@@ -25,7 +25,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`, 
+        icon: `src/images/logo.png`,
       },
     },
     {
