@@ -28,7 +28,7 @@ const Header = () => {
             `}
         >
             <HeaderContent>
-                <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} />
+                <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} fetchPriority="high" />
                 <nav>
                     <Menu>
                         <li>Inicio</li>
