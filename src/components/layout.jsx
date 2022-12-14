@@ -9,7 +9,7 @@ import './layout.css';
 const Layout = (props) => {
 
     //const { fallbackSeo: { title , description } } = useSeo();
-    const title = "AzetaSeguros";
+    const title = "Azeta Seguros";
     const description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, voluptatem.";
 
     return (

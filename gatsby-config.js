@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `AzetaSeguros`,
+    title: `Azeta Seguros`,
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, voluptatem.',
     siteUrl: `https://www.yourdomain.tld`
   },

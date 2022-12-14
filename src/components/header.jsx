@@ -1,11 +1,9 @@
 import React from 'react';
 import { graphql, useStaticQuery  } from 'gatsby';
-import Image from 'gatsby-image';
-import { css } from '@emotion/react';
+import { Button } from './ui';
 import styled from '@emotion/styled';
 
 const Header = () => {
-
     const { allDatoCmsAsset } = useStaticQuery(
         graphql`
             query {
@@ -32,7 +30,7 @@ const Header = () => {
                     <li>Quienes Somos</li>
                 </Menu>
             </nav>
-            <Button href="">Contáctanos</Button>
+            <Button text="Contáctanos" />
         </HeaderContent>
     );
 }
@@ -56,23 +54,8 @@ const Menu = styled.ul`
     display: flex;
     flex-direction: row;
     align-items: center;
-    li {
-        margin-right: 2rem;
-        font-weight: 400;
-    }
-    li:last-child {
-        margin-right: 0;
-    }
-`
-
-const Button = styled.div`
-    background-color: var(--orange);
-    text-decoration: none;
-    color: white;
-    border-radius: .5rem;
-    padding: 1rem 2.5rem;
-    font-weight: 400;
-    cursor: pointer;
+    font-size: 1.5rem;
+    gap: 2rem;
 `
 
 export default Header;
