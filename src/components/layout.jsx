@@ -17,8 +17,15 @@ const Layout = (props) => {
             <Global 
                 styles={css`
                     :root {
+                        --white: white;
                         --bgHeader: #ECEEFF;
+                        --blue: #3B4EFF;
                         --orange: #F76031;
+                        --yellow: #FFF2CB;
+                        --gray: #232323CC;
+                        --fsz16: 1.2rem;
+                        --fsz20: 1.5rem;
+                        --fsz110: 7.5rem;
                     }
                     html {
                         font-size: 62.5%;
@@ -30,8 +37,8 @@ const Layout = (props) => {
                         box-sizing: inherit;
                     }
                     body {
-                        font-size: 16px;
-                        font-size: 1.6rem;
+                        font-size: 15px;
+                        font-size: 1.5rem;
                         line-height: 1.5;
                         font-family: 'CircularStdCustom';
                     }

@@ -34,10 +34,10 @@ const Header = () => {
                         <li>Inicio</li>
                         <li>Seguros</li>
                         <li>Beneficios</li>
-                        <li>Quienes Somos</li>
+                        <li>Quiénes Somos</li>
                     </Menu>
                 </nav>
-                <Button text="Contáctanos" />
+                <Button bg={true}>Contáctanos</Button>
             </HeaderContent>
         </header>
     );
@@ -65,7 +65,7 @@ const Menu = styled.ul`
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: var(--fsz20);
     gap: 2rem;
 `
 
