@@ -34,15 +34,22 @@ const Home = () => {
                 <Button text="Solicitar Producto" />
             </ContainerText>
             <ContainerIllustration>
-                {/* <Image fluid={illustration.fluid} /> */}
-                <img src={illustration.fluid.src} alt={illustration.notes} />
+                <Image fluid={illustration.fluid} />
             </ContainerIllustration>
         </ContainerHome>
     );
 }
 
 const ContainerHome = styled.div`
-    display: flex;
+    padding-top: 4rem;
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
 `;
 
 const ContainerText = styled.div`
@@ -50,9 +57,9 @@ const ContainerText = styled.div`
 `;
 
 const ContainerIllustration = styled.div`
-    img {
+    /* img {
         width: 50rem;
-    }
+    } */
 `;
 
 export default Home;

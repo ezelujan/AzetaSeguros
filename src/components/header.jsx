@@ -1,7 +1,8 @@
 import React from 'react';
 import { graphql, useStaticQuery  } from 'gatsby';
-import { Button } from './ui';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { Button } from './ui';
 
 const Header = () => {
     const { allDatoCmsAsset } = useStaticQuery(
@@ -20,28 +21,38 @@ const Header = () => {
     );
 
     return (
-        <HeaderContent>
-            <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} />
-            <nav>
-                <Menu>
-                    <li>Inicio</li>
-                    <li>Seguros</li>
-                    <li>Beneficios</li>
-                    <li>Quienes Somos</li>
-                </Menu>
-            </nav>
-            <Button text="Contáctanos" />
-        </HeaderContent>
+        <header
+            css={css`
+                background-color: var(--bgHeader);
+                padding: 1rem;
+            `}
+        >
+            <HeaderContent>
+                <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} />
+                <nav>
+                    <Menu>
+                        <li>Inicio</li>
+                        <li>Seguros</li>
+                        <li>Beneficios</li>
+                        <li>Quienes Somos</li>
+                    </Menu>
+                </nav>
+                <Button text="Contáctanos" />
+            </HeaderContent>
+        </header>
     );
 }
 
-const HeaderContent = styled.header`
-    display: flex;
-    padding: 1rem;
-    padding: 3rem 10rem;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: var(--bgHeader);
+const HeaderContent = styled.div`
+    padding: 1rem 0;
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+    @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 `
 
 const Img = styled.img`

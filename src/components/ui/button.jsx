@@ -8,6 +8,7 @@ export const Button = ({ text }) => {
 }
 
 const ButtonUI = styled.div`
+    display: block;
     width: auto;
     outline: none;
     color: white;
