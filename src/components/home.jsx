@@ -32,10 +32,10 @@ const Home = () => {
                 <h2>25 millones+ Clientes</h2>
                 <p>La gente confía en nosotros para asegurar lo que es importante para ellos.</p>
                 <ContainerAvatar>
-                    <img src="https://unavatar.io/twitter/midudev" alt="Avatar" fetchPriority="low" />
-                    <img src="https://unavatar.io/twitter/alba_gd" alt="Avatar" fetchPriority="low" />
-                    <img src="https://unavatar.io/twitter/s4vitar" alt="Avatar" fetchPriority="low" />
-                    <img src="https://unavatar.io/twitter/okbel" alt="Avatar" fetchPriority="low" />
+                    <img src="https://unavatar.io/twitter/midudev" alt="Avatar" fetchpriority="low" />
+                    <img src="https://unavatar.io/twitter/alba_gd" alt="Avatar" fetchpriority="low" />
+                    <img src="https://unavatar.io/twitter/s4vitar" alt="Avatar" fetchpriority="low" />
+                    <img src="https://unavatar.io/twitter/okbel" alt="Avatar" fetchpriority="low" />
                     <div>25m+</div>
                 </ContainerAvatar>
             </FloatWindow>

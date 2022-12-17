@@ -28,7 +28,7 @@ const Header = () => {
             `}
         >
             <HeaderContent>
-                <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} fetchPriority="high" />
+                <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} fetchpriority="high" />
                 <nav>
                     <Menu>
                         <li>Inicio</li>
@@ -66,7 +66,7 @@ const Menu = styled.ul`
     flex-direction: row;
     align-items: center;
     font-size: var(--fsz20);
-    gap: 2rem;
+    gap: 4rem;
 `
 
 export default Header;
