@@ -32,10 +32,10 @@ const Home = () => {
                 <h2>25 millones+ Clientes</h2>
                 <p>La gente confía en nosotros para asegurar lo que es importante para ellos.</p>
                 <ContainerAvatar>
-                    <img src="https://unavatar.io/twitter/midudev" alt="Avatar" fetchpriority="low" />
-                    <img src="https://unavatar.io/twitter/alba_gd" alt="Avatar" fetchpriority="low" />
-                    <img src="https://unavatar.io/twitter/s4vitar" alt="Avatar" fetchpriority="low" />
-                    <img src="https://unavatar.io/twitter/okbel" alt="Avatar" fetchpriority="low" />
+                    <img src="https://unavatar.io/midudev" alt="Avatar" fetchpriority="low" />
+                    <img src="https://unavatar.io/mouredev" alt="Avatar" fetchpriority="low" />
+                    <img src="https://unavatar.io/s4vitar" alt="Avatar" fetchpriority="low" />
+                    <img src="https://unavatar.io/okbel" alt="Avatar" fetchpriority="low" />
                     <div>25m+</div>
                 </ContainerAvatar>
             </FloatWindow>
@@ -104,7 +104,8 @@ const ContainerAvatar = styled.div`
         align-items: center;
         justify-content: center;
         font-size: var(--fsz16);
-        border: .2rem solid #444;
+        /* border: .2rem solid #444; */
+        box-shadow: 0px 3px 6px var(--grayShadow);
         background-color: var(--blue);
     }
 `;

@@ -1,15 +1,15 @@
 import React from 'react';
 import Home from '../components/home';
 import Layout from '../components/layout';
-import Sponsors from '../components/sponsors';
-import Blog from '../components/blog';
+import Sponsors from '../components/sponsors/sponsors';
+import Articles from '../components/articles/articles';
 
 const IndexPage = () => {
     return (
         <Layout>
             <Home />
             <Sponsors />
-            <Blog />
+            <Articles />
         </Layout>
     );
 };
