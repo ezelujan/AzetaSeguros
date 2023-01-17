@@ -12,14 +12,15 @@ const Articles = () => {
     return (
         <SectionBlog>
             <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
-            <div>
-                {articles.map(article => (
+            <ContenedorArticle>
+                {articles.map((article, index) => (
                     <Article 
+                        index={index}
                         key={article.id}
                         article={article}
                     />
                 ))}
-            </div>
+            </ContenedorArticle>
         </SectionBlog>
     );
 };
@@ -37,6 +38,7 @@ const SectionBlog = styled.section`
         font-weight: 700;
         font-size: var(--fsz80);
         width: 50%;
+        margin-bottom: 6rem;
         @media (max-width: 768px) {
             margin: 0 auto;
             text-align: center;
@@ -46,6 +48,12 @@ const SectionBlog = styled.section`
             font-weight: 700;
         }
     }
+`;
+
+const ContenedorArticle = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
 `;
 
 export default Articles;
