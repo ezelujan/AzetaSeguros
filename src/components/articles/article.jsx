@@ -30,7 +30,7 @@ const ContenedorArticle = styled.div`
     background-color: var(--white);
     box-shadow: 0px 0px 50px rgba(139, 141, 164, 0.17);
     border-radius: 2rem;
-    margin-bottom: 20rem;
+    margin-bottom: 15rem;
     padding: 2.5rem 0;
 `;
 
