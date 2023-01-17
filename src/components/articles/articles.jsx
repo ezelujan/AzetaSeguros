@@ -39,6 +39,7 @@ const SectionBlog = styled.section`
         font-size: var(--fsz80);
         width: 50%;
         margin-bottom: 6rem;
+        color: var(--gray);
         @media (max-width: 768px) {
             margin: 0 auto;
             text-align: center;

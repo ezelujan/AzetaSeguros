@@ -63,9 +63,10 @@ const Text = styled.div`
         font-size: var(--fsz30);
         margin-bottom: 2rem;
         font-weight: 500;
+        color: var(--gray);
     }
     p {
-        color: var(--gray);
+        color: var(--gray80);
         font-size: var(--fsz20);
         font-weight: 400;
     }

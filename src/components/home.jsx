@@ -81,11 +81,12 @@ const FloatWindow = styled.div`
     h2 {
         font-size: var(--fsz20);
         font-weight: 600;
+        color: var(--grayWhite);
     }
     p {
         margin: 1.5rem 0;
         font-size: var(--fsz16);
-        color: var(--grayWhite);
+        color: var(--grayWhite80);
         font-weight: 400;
     }
 `;
@@ -133,6 +134,7 @@ const ContainerText = styled.div`
         font-weight: 400;
         font-size: var(--fsz110);
         width: 70%;
+        color: var(--gray);
         @media (max-width: 768px) {
             margin: 0 auto;
             text-align: center;
@@ -146,7 +148,7 @@ const ContainerText = styled.div`
         width: 60%;
         margin: 3rem 0 5rem 0;
         font-size: var(--fsz20);
-        color: var(--gray);
+        color: var(--gray80);
         @media (max-width: 768px) {
             margin: 3rem auto;
         }

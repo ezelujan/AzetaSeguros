@@ -22,8 +22,10 @@ const Layout = (props) => {
                         --blue: #3B4EFF;
                         --orange: #F76031;
                         --yellow: #FFF2CB;
-                        --gray: #232323CC;
+                        --gray: #232323;
+                        --gray80: #232323CC;
                         --grayWhite: #2E2E2E;
+                        --grayWhite80: #2E2E2ECC;
                         --grayShadow: #00000029;
                         --fsz14: 1.1rem;
                         --fsz16: 1.2rem;

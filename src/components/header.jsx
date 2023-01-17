@@ -66,6 +66,7 @@ const Menu = styled.ul`
     flex-direction: row;
     align-items: center;
     font-size: var(--fsz20);
+    color: var(--gray);
     gap: 4rem;
 `
 
