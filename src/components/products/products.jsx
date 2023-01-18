@@ -2,133 +2,147 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from '@emotion/styled';
 import Image from 'gatsby-image';
+import useProducts from '../../hooks/use-products';
 
-const Home = () => {
-    const { allDatoCmsProductheader } = useStaticQuery(
+const Products = () => {
+    const { allDatoCmsAsset } = useStaticQuery(
         graphql`
             query {
-                allDatoCmsProductheader {
+                allDatoCmsAsset(filter: { basename: { eq: "right-arrow" } }) {
                     nodes {
-                        title
-                        description
-                        descriptionoptional
-                        illustration {
-                            fluid {
-                                ...GatsbyDatoCmsFluid
-                            }
+                        notes
+                        fluid(maxWidth: 1200) {
+                            ...GatsbyDatoCmsFluid
                         }
                     }
                 }
             }
         `,
     );
-
-    const { title, description, descriptionoptional, illustration } = allDatoCmsProductheader.nodes[0];
+    const products = useProducts();
+    if (!products.length) return false;
 
     return (
         <Background>
-            <FloatWindow>
-                <h2>50+ Productos</h2>
-                <p>La gente confía en nosotros para asegurar lo que es importante para ellos.</p>
-            </FloatWindow>
-            <ContainerHome>
-                <ContainerIllustration>
-                    <Image fluid={illustration.fluid} />
-                </ContainerIllustration>
-                <ContainerText>
-                    <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
-                    <p>{description}</p>
-                    <p>{descriptionoptional}</p>
-                </ContainerText>
-            </ContainerHome>
+            <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} fetchpriority="low" rotate={true} />
+            <ContenedorProducto>
+                <ContenedorImg>
+                    <Image fluid={products[0].icon.fluid} />
+                </ContenedorImg>
+                <Text>
+                    <h2>{ products[0].title }</h2>
+                    <p>{ products[0].description }</p>
+                </Text>
+                <Button bg={false}>Cotizar</Button>
+            </ContenedorProducto>
+            <ContenedorProducto>
+                <ContenedorImg>
+                    <Image fluid={products[0].icon.fluid} />
+                </ContenedorImg>
+                <Text>
+                    <h2>{ products[0].title }</h2>
+                    <p>{ products[0].description }</p>
+                </Text>
+                <Button bg={false}>Cotizar</Button>
+            </ContenedorProducto>
+            <ContenedorProducto>
+                <ContenedorImg>
+                    <Image fluid={products[0].icon.fluid} />
+                </ContenedorImg>
+                <Text>
+                    <h2>{ products[0].title }</h2>
+                    <p>{ products[0].description }</p>
+                </Text>
+                <Button bg={false}>Cotizar</Button>
+            </ContenedorProducto>
+            <ContenedorProducto>
+                <ContenedorImg>
+                    <Image fluid={products[0].icon.fluid} />
+                </ContenedorImg>
+                <Text>
+                    <h2>{ products[0].title }</h2>
+                    <p>{ products[0].description }</p>
+                </Text>
+                <Button bg={false}>Cotizar</Button>
+            </ContenedorProducto>
+            <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} fetchpriority="low" />
         </Background>
     );
 };
 
-const Background = styled.div`
-    position: relative;
-    @media (min-width: 768px) {
-        background: blue;
-        background: linear-gradient(to right, white 25%, var(--bgHeader) 25%, var(--bgHeader) 50%);
-    }
+export const Background = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--bgHeader);
+    padding: 10rem;
 `;
 
-const FloatWindow = styled.div`
-    top: 22.5%;
-    left: 42.5%;
-    width: 20rem;
-    height: 14rem;
-    display: block;
-    position: absolute;
-    text-align: center;
+const Img = styled.img`
+    width: 3rem;
+    height: 3rem;
+    transform: ${(props) => (props.rotate ? 'rotate(180deg)' : 'none')};
+`
+
+const ContenedorProducto = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    height: 38rem;
+    padding: 4rem 5rem;
+    background: var(--white);
     border-radius: 2rem;
-    padding: 2.5rem 1.3rem;
-    word-wrap: break-word;
-    background-color: white;
-    transform: translate(-50%, -50%);
-    box-shadow: 0px 0px 100px rgba(165, 165, 165, 0.25);
+    box-shadow: 0px 40px 80px rgba(120, 122, 141, 0.07);
+    `
+
+const ContenedorImg = styled.div`
+    width: 7.5rem;
+    padding: 1rem;
+    margin-bottom: 3rem;
+    background: var(--white);
+    box-shadow: 0px 0px 50px rgba(131, 134, 153, 0.19);
+    border-radius: 100%;
+`
+
+const Text = styled.div`
+    text-align: center;
     h2 {
-        font-size: var(--fsz20);
-        font-weight: 600;
-        color: var(--grayWhite);
-    }
-    p {
-        margin: 1rem 0;
-        font-size: var(--fsz16);
-        color: var(--grayWhite80);
-        font-weight: 400;
-    }
-`;
-
-const ContainerHome = styled.div`
-    max-width: 1200px;
-    width: 95%;
-    margin: 0 auto;
-    @media (min-width: 768px) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 1rem;
-    }
-`;
-
-const ContainerText = styled.div`
-    padding: 8rem 0 0 8rem;
-    @media (max-width: 768px) {
-        text-align: center;
-    }
-    h1 {
-        line-height: 1.2;
-        font-weight: 400;
-        font-size: var(--fsz110);
+        font-weight: 500;
+        font-size: var(--fsz30);
         color: var(--gray);
-        @media (max-width: 768px) {
-            margin: 0 auto;
-            text-align: center;
-        }
-        span {
-            color: var(--blue);
-            font-weight: 700;
-        }
+        margin-bottom: 1.4rem;
     }
     p {
-        margin: 3rem 0 3rem 0;
-        font-size: var(--fsz20);
+        font-weight: 400;
+        font-size: var(--fsz18);
         color: var(--gray80);
-        @media (max-width: 768px) {
-            margin: 3rem auto;
-        }
+        margin-bottom: 5rem;
+    }
+`
+
+export const Button = styled.a`
+    display: block;
+    width: auto;
+    outline: none;
+    color: ${(props) => (props.bg ? 'var(--white)' : 'var(--orange)')};
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 0.5rem;
+    font-size: var(--fsz20);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid var(--orange);
+    border-radius: 5px;
+    background-color: ${(props) => (props.bg ? 'var(--orange)' : 'transparent')};
+    transition: all .2s ease;
+    &:hover {
+        background-color: var(--orange);
+        color: var(--white);
     }
 `;
 
-const ContainerIllustration = styled.div`
-    padding: 0 5rem 0 0;
-    background: white;
-    margin-left: -40%;
-    margin-top: -8%;
-    border-radius: 0 0 10rem 0;
-    @media (max-width: 768px) {
-        display: none;
-    }
-`;
-
-export default Home;
+export default Products;

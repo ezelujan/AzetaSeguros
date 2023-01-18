@@ -12,10 +12,14 @@ const Article = ({ article, index }) => (
                 background-color: ${colors[index]};
             `}
         >
-            <ContainerImage>
+            <ContainerImage
+                css={css`
+                    padding: ${index === 2 ? '0 1rem' : '0'};
+                `}
+            >
                 <Image fluid={article.icon.fluid} />
             </ContainerImage>
-            <p>Leer más</p>
+            <a>Leer más</a>
         </Header>
         <Text>
             <h2>{article.title}</h2>
@@ -41,11 +45,14 @@ const Header = styled.div`
     text-align: right;
     padding: 1rem 3rem;
     margin-bottom: 2rem;
-    p {
+    a {
         color: var(--orange);
         font-size: var(--fsz20);
         text-transform: uppercase;
         font-weight: 500;
+        text-decoration: none;
+        outline: none;
+        cursor: pointer;
     }
 `
 
