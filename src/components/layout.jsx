@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import { Global, css } from '@emotion/react';
 import Header from './header';
 import './layout.css';
-// import Footer from './footer';
+import Footer from './footer/footer';
 //import useSeo from '../hooks/use-seo';
 
 const Layout = (props) => {
@@ -25,6 +25,7 @@ const Layout = (props) => {
                         --gray: #232323;
                         --gray80: #232323CC;
                         --grayWhite: #2E2E2E;
+                        --grayWhite15: #2E2E2E26;
                         --grayWhite80: #2E2E2ECC;
                         --grayShadow: #00000029;
                         --fsz14: 1.1rem;
@@ -69,9 +70,7 @@ const Layout = (props) => {
 
             <Header />
             {props.children}
-            {/* <Footer 
-                title={title}
-            /> */}
+            <Footer />
         </>
     );
 }
