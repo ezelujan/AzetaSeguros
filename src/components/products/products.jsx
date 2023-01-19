@@ -24,7 +24,7 @@ const Products = () => {
 
     return (
         <Background>
-            <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} fetchpriority="low" rotate={true} />
+            <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} fetchpriority="low" rotateImg={true} />
             <ContenedorProducto>
                 <ContenedorImg>
                     <Image fluid={products[0].icon.fluid} />
@@ -87,7 +87,7 @@ const Img = styled.img`
     border-radius: 100%;
     cursor: pointer;
     transition: all .2s ease;
-    transform: ${(props) => (props.rotate ? 'rotate(180deg)' : 'none')};
+    transform: ${(props) => (props.rotateImg ? 'rotate(180deg)' : 'none')};
     &:hover {
         background: rgb(245, 245, 245);
     }

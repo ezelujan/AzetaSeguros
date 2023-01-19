@@ -7,6 +7,7 @@ import ProductHeader from '../components/products/productHeader';
 import Products from '../components/products/products';
 import Achievements from '../components/achievements/achievements';
 import WhyChoose from '../components/whychoose/whyChoose';
+import ContactUs from '../components/contactus/contactUs';
 
 const IndexPage = () => {
     return (
@@ -18,6 +19,7 @@ const IndexPage = () => {
             <Products />
             <Achievements />
             <WhyChoose />
+            <ContactUs />
         </Layout>
     );
 };
