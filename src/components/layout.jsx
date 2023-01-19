@@ -32,6 +32,7 @@ const Layout = (props) => {
                         --fsz18: 1.35rem;
                         --fsz20: 1.5rem;
                         --fsz30: 2.25rem;
+                        --fsz40: 2.75rem;
                         --fsz80: 5.5rem;
                         --fsz110: 7.5rem;
                     }

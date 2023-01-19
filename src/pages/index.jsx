@@ -5,6 +5,7 @@ import Sponsors from '../components/sponsors/sponsors';
 import Articles from '../components/articles/articles';
 import ProductHeader from '../components/products/productHeader';
 import Products from '../components/products/products';
+import Achievements from '../components/achievements/achievements';
 
 const IndexPage = () => {
     return (
@@ -14,6 +15,7 @@ const IndexPage = () => {
             <Articles />
             <ProductHeader />
             <Products />
+            <Achievements />
         </Layout>
     );
 };

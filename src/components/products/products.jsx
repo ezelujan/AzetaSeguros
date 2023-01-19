@@ -80,9 +80,17 @@ export const Background = styled.div`
 `;
 
 const Img = styled.img`
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: all .2s ease;
     transform: ${(props) => (props.rotate ? 'rotate(180deg)' : 'none')};
+    &:hover {
+        background: rgb(245, 245, 245);
+    }
 `
 
 const ContenedorProducto = styled.div`
@@ -96,7 +104,12 @@ const ContenedorProducto = styled.div`
     background: var(--white);
     border-radius: 2rem;
     box-shadow: 0px 40px 80px rgba(120, 122, 141, 0.07);
-    `
+    transition: all .2s ease;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.025);
+    }
+`
 
 const ContenedorImg = styled.div`
     width: 7.5rem;
