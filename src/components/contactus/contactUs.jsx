@@ -7,7 +7,7 @@ const ContactUs = () => {
     const agents = useAgents();
     if (!agents.length) return false;
 
-    const title = 'Nuestros <span>agentes financieron</span> están listos para ayudarlo';
+    const title = 'Nuestros <span>asesores</span> están listos para <span>ayudarlo</span>';
 
     return (
         <ContactUsSection>
