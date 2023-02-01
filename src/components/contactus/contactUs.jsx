@@ -25,10 +25,9 @@ const ContactUs = () => {
 }
 
 const ContactUsSection = styled.div`
-    padding: 10rem 0;
     max-width: 1200px;
     width: 95%;
-    margin: 0 auto;
+    margin: 10rem auto;
     @media (min-width: 768px) {
         display: flex;
         text-align: center;

@@ -18,6 +18,7 @@ const Layout = (props) => {
                 styles={css`
                     :root {
                         --white: white;
+                        --white80: #ffffffcc;
                         --bgHeader: #ECEEFF;
                         --blue: #3B4EFF;
                         --orange: #F76031;
@@ -32,9 +33,11 @@ const Layout = (props) => {
                         --fsz16: 1.2rem;
                         --fsz18: 1.35rem;
                         --fsz20: 1.5rem;
+                        --fsz25: 1.75rem;
                         --fsz30: 2.25rem;
                         --fsz40: 2.75rem;
                         --fsz80: 5.5rem;
+                        --fsz90: 6.75rem;
                         --fsz110: 7.5rem;
                     }
                     html {

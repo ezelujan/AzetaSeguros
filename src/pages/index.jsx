@@ -8,6 +8,7 @@ import Products from '../components/products/products';
 import Achievements from '../components/achievements/achievements';
 import WhyChoose from '../components/whychoose/whyChoose';
 import ContactUs from '../components/contactus/contactUs';
+import LetStartNow from '../components/contactus/letStartNow';
 
 const IndexPage = () => {
     return (
@@ -20,6 +21,7 @@ const IndexPage = () => {
             <Achievements />
             <WhyChoose />
             <ContactUs />
+            <LetStartNow />
         </Layout>
     );
 };
