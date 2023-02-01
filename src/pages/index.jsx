@@ -6,7 +6,7 @@ import Articles from '../components/articles/articles';
 import ProductHeader from '../components/products/productHeader';
 import Products from '../components/products/products';
 import Achievements from '../components/achievements/achievements';
-import WhyChoose from '../components/whychoose/whyChoose';
+import Allies from '../components/allies/allies';
 import ContactUs from '../components/contactus/contactUs';
 import LetStartNow from '../components/contactus/letStartNow';
 
@@ -19,7 +19,7 @@ const IndexPage = () => {
             <ProductHeader />
             <Products />
             <Achievements />
-            <WhyChoose />
+            <Allies />
             <ContactUs />
             <LetStartNow />
         </Layout>

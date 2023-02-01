@@ -1,15 +1,15 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 import Image from 'gatsby-image';
-import { Button } from '../ui';
+import useAllies from '../../hooks/use-allies';
+import Ally from '../allies/ally';
 
-const WhyChoose = () => {
-    const { allDatoCmsWhychoose } = useStaticQuery(
+const Allies = () => {
+    const { allDatoCmsAllyheader } = useStaticQuery(
         graphql`
             query {
-                allDatoCmsWhychoose {
+                allDatoCmsAllyheader {
                     nodes {
                         title
                         description
@@ -24,17 +24,25 @@ const WhyChoose = () => {
         `,
     );
 
-    const { title, description, illustration } = allDatoCmsWhychoose.nodes[0];
+    const { title, description, illustration } = allDatoCmsAllyheader.nodes[0];
+
+    const allies = useAllies();
+    if (!allies.length) return false;
 
     return (
         <Background>
             <WhyChooseSection>
                 <ContainerText>
                     <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
-                    <p>Agregar a su familia significa agregar a sus necesidades financieras. Estamos aquí para guiarlo mientras trabaja para asegurar el futuro de sus seres queridos.</p>
-                    <div css={css`display: flex;`} >
-                        <Button bg={true}>Leer más</Button>
-                    </div>
+                    <p>{description}</p>
+                    <ListAllies>
+                        {allies.map(ally => (
+                            <Ally
+                                key={ally.id}
+                                ally={ally}
+                            />
+                        ))}
+                    </ListAllies>
                 </ContainerText>
                 <ContainerIllustration>
                     <Image fluid={illustration.fluid} />
@@ -42,7 +50,7 @@ const WhyChoose = () => {
             </WhyChooseSection>
         </Background>
     );
-}
+};
 
 const Background = styled.div`
     background-color: var(--bgHeader);
@@ -58,11 +66,11 @@ const WhyChooseSection = styled.section`
         grid-template-columns: repeat(2, 1fr);
         column-gap: 1rem;
     }
-`
+`;
 
 const ContainerText = styled.div`
     @media (max-width: 768px) {
-        text-align: center;   
+        text-align: center;
     }
     h1 {
         line-height: 1.2;
@@ -89,14 +97,22 @@ const ContainerText = styled.div`
         }
     }
 `;
- 
+
+const ListAllies = styled.div`
+    /* margin-right: 10rem; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+    row-gap: 2rem;
+`;
+
 const ContainerIllustration = styled.div`
     /* padding: 0 5rem 0 0; */
-    margin-left: -5%;
+    margin-left: 20%;
     border-radius: 0 0 10rem 0;
     @media (max-width: 768px) {
         display: none;
     }
-`
+`;
 
-export default WhyChoose;
+export default Allies;
