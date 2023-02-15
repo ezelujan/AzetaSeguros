@@ -1,8 +1,8 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
 import styled from '@emotion/styled';
-import Image from 'gatsby-image';
+import { graphql, useStaticQuery } from 'gatsby';
 import useProducts from '../../hooks/use-products';
+import Product from './product';
 
 const Products = () => {
     const { allDatoCmsAsset } = useStaticQuery(
@@ -25,46 +25,12 @@ const Products = () => {
     return (
         <Background>
             <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} fetchpriority="low" rotateImg={true} />
-            <ContenedorProducto>
-                <ContenedorImg>
-                    <Image fluid={products[0].icon.fluid} />
-                </ContenedorImg>
-                <Text>
-                    <h2>{ products[0].title }</h2>
-                    <p>{ products[0].description }</p>
-                </Text>
-                <Button bg={false}>Cotizar</Button>
-            </ContenedorProducto>
-            <ContenedorProducto>
-                <ContenedorImg>
-                    <Image fluid={products[0].icon.fluid} />
-                </ContenedorImg>
-                <Text>
-                    <h2>{ products[0].title }</h2>
-                    <p>{ products[0].description }</p>
-                </Text>
-                <Button bg={false}>Cotizar</Button>
-            </ContenedorProducto>
-            <ContenedorProducto>
-                <ContenedorImg>
-                    <Image fluid={products[0].icon.fluid} />
-                </ContenedorImg>
-                <Text>
-                    <h2>{ products[0].title }</h2>
-                    <p>{ products[0].description }</p>
-                </Text>
-                <Button bg={false}>Cotizar</Button>
-            </ContenedorProducto>
-            <ContenedorProducto>
-                <ContenedorImg>
-                    <Image fluid={products[0].icon.fluid} />
-                </ContenedorImg>
-                <Text>
-                    <h2>{ products[0].title }</h2>
-                    <p>{ products[0].description }</p>
-                </Text>
-                <Button bg={false}>Cotizar</Button>
-            </ContenedorProducto>
+            {products.map(product => (
+                <Product
+                    key={product.id}
+                    product={product}
+                />
+            ))}
             <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} fetchpriority="low" />
         </Background>
     );
