@@ -23,7 +23,7 @@ const ContenedorProducto = styled.div`
     justify-content: center;
     align-items: center;
     width: 30rem;
-    height: 38rem;
+    height: 43rem;
     padding: 4rem 5rem;
     background: var(--white);
     border-radius: 2rem;

@@ -74,7 +74,7 @@ const FloatWindow = styled.div`
     }
     p {
         margin: 1rem 0;
-        font-size: var(--fsz16);
+        font-size: var(--fsz17);
         color: var(--grayWhite80);
         font-weight: 400;
     }

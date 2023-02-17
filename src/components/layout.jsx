@@ -32,14 +32,16 @@ const Layout = (props) => {
                         --grayShadow: #00000029;
                         --fsz14: 1.1rem;
                         --fsz16: 1.2rem;
-                        --fsz18: 1.35rem;
-                        --fsz20: 1.5rem;
+                        --fsz17: 1.3rem;
+                        --fsz18: 1.4rem;
+                        --fsz19: 1.5rem;
+                        --fsz20: 1.6rem;
                         --fsz25: 1.75rem;
                         --fsz30: 2.25rem;
                         --fsz40: 2.75rem;
-                        --fsz80: 5.5rem;
-                        --fsz90: 6.75rem;
-                        --fsz110: 7.5rem;
+                        --fsz80: 5.2rem;
+                        --fsz90: 6.5rem;
+                        --fsz110: 7.2rem;
                     }
                     html {
                         font-size: 62.5%;

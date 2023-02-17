@@ -19,10 +19,9 @@ const Article = ({ article, index }) => (
             >
                 <Image fluid={article.icon.fluid} />
             </ContainerImage>
-            <a>Leer más</a>
+            <h2>{article.title}</h2>
         </Header>
         <Text>
-            <h2>{article.title}</h2>
             <p>{article.description}</p>
         </Text>
     </ContenedorArticle>
@@ -45,14 +44,13 @@ const Header = styled.div`
     text-align: right;
     padding: 1rem 3rem;
     margin-bottom: 2rem;
-    a {
+    h2 {
         color: var(--orange);
         font-size: var(--fsz20);
         text-transform: uppercase;
         font-weight: 500;
         text-decoration: none;
         outline: none;
-        cursor: pointer;
     }
 `
 
@@ -74,7 +72,7 @@ const Text = styled.div`
     }
     p {
         color: var(--gray80);
-        font-size: var(--fsz20);
+        font-size: var(--fsz19);
         font-weight: 400;
     }
 `;
