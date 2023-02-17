@@ -7,7 +7,7 @@ const Achievements = () => {
     const title = '<h1>Obtén <span>protección</span> adecuada para seguir <span>avanzando</span></h1>';
 
     return (
-        <AchievementsSection>
+        <AchievementsSection id='beneficios'>
             <ContainerText>
                 <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
                 <p>Agregar a su familia significa agregar a sus necesidades financieras. Estamos aquí para guiarlo mientras trabaja para asegurar el futuro de sus seres queridos.</p>

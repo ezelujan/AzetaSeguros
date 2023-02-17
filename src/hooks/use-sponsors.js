@@ -8,6 +8,7 @@ const useSponsors = () => {
                     nodes {
                         id
                         name
+                        link
                         image {
                             fluid(maxWidth: 600, imgixParams: { fm: "png", auto: "compress" }) {
                                 ...GatsbyDatoCmsFluid
@@ -22,6 +23,7 @@ const useSponsors = () => {
     return data.allDatoCmsSponsor.nodes.map((sponsor) => ({
         id: sponsor.id,
         name: sponsor.name,
+        link: sponsor.link,
         image: sponsor.image,
     }));
 };

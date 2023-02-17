@@ -13,4 +13,9 @@ export const Button = styled.a`
     text-decoration: none;
     text-transform: uppercase;
     background-color: ${props => props.bg ? 'var(--orange)' : 'transparent'};
+    transition: .15s all ease;
+    &:hover {
+        background-color: ${props => props.bg ? 'var(--orange80)' : 'transparent'};
+        color: ${props => props.bg ? 'none' : 'var(--orange80)'};
+    }
 `;

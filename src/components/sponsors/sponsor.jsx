@@ -4,7 +4,9 @@ import styled from '@emotion/styled';
 
 const Sponsor = ({ sponsor }) => (
     <ContainerSponsor id="sponsor">
-        <Image fluid={sponsor.image.fluid} />
+        <a href={sponsor.link} target='_blank'>
+            <Image fluid={sponsor.image.fluid} />
+        </a>
     </ContainerSponsor>
 );
 

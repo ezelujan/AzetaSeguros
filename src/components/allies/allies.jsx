@@ -30,7 +30,7 @@ const Allies = () => {
     if (!allies.length) return false;
 
     return (
-        <Background>
+        <Background id='nuestros-aliados'>
             <WhyChooseSection>
                 <ContainerText>
                     <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>

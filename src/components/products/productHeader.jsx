@@ -36,7 +36,7 @@ const ProductHeader = () => {
                     <Image fluid={illustration.fluid} />
                 </ContainerIllustration>
                 <ContainerText>
-                    <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
+                    <h1 dangerouslySetInnerHTML={{ __html: title }} id='seguros'></h1>
                     <p>{description}</p>
                     <p>{descriptionoptional}</p>
                 </ContainerText>

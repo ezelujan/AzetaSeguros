@@ -10,7 +10,7 @@ const Articles = () => {
     if (!articles.length) return false;
 
     return (
-        <SectionBlog>
+        <SectionBlog id="articles">
             <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
             <ContenedorArticle>
                 {articles.map((article, index) => (

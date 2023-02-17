@@ -27,7 +27,7 @@ const Home = () => {
     const { title, description, illustration } = allDatoCmsHome.nodes[0];
 
     return (
-        <Background>
+        <Background id='inicio'>
             <FloatWindow>
                 <h2>25 millones+ Clientes</h2>
                 <p>La gente confía en nosotros para asegurar lo que es importante para ellos.</p>
@@ -45,8 +45,8 @@ const Home = () => {
                     <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
                     <p>{description}</p>
                     <div css={css` display: flex; gap: 2rem; `} >
-                        <Button bg={true}>Solicitar producto</Button>
-                        <Button bg={false}>Leer más</Button>
+                        <Button bg={true} href='#seguros'>Solicitar producto</Button>
+                        <Button bg={false} href="#articles">Leer más</Button>
                     </div>
                 </ContainerText>
                 <ContainerIllustration>

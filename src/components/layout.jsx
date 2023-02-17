@@ -22,6 +22,7 @@ const Layout = (props) => {
                         --bgHeader: #ECEEFF;
                         --blue: #3B4EFF;
                         --orange: #F76031;
+                        --orange80: rgba(247, 95, 49, 0.8);
                         --yellow: #FFF2CB;
                         --gray: #232323;
                         --gray80: #232323CC;
@@ -43,6 +44,7 @@ const Layout = (props) => {
                     html {
                         font-size: 62.5%;
                         box-sizing: border-box;
+                        scroll-behavior: smooth;
                     }
                     *, *:before, *:after {
                         padding: 0;
@@ -63,6 +65,10 @@ const Layout = (props) => {
                         list-style: none;
                         margin: 0;
                         padding: 0;
+                    }
+                    a {
+                        text-decoration: none;
+                        color: var(--gray);
                     }
                 `}
             />
