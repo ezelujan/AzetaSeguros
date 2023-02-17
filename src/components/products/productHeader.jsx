@@ -29,14 +29,14 @@ const ProductHeader = () => {
         <Background>
             <FloatWindow>
                 <h2>50+ Productos</h2>
-                <p>La gente confía en nosotros para asegurar lo que es importante para ellos.</p>
+                <p>Nuestros productos garantizan y satisfacen la vida de nuestros clientes.</p>
             </FloatWindow>
             <ContainerHome>
                 <ContainerIllustration>
                     <Image fluid={illustration.fluid} />
                 </ContainerIllustration>
                 <ContainerText>
-                    <h1 dangerouslySetInnerHTML={{ __html: title }} id='seguros'></h1>
+                    <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
                     <p>{description}</p>
                     <p>{descriptionoptional}</p>
                 </ContainerText>

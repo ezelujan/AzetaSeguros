@@ -10,9 +10,9 @@ const Achievements = () => {
         <AchievementsSection id='beneficios'>
             <ContainerText>
                 <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
-                <p>Agregar a su familia significa agregar a sus necesidades financieras. Estamos aquí para guiarlo mientras trabaja para asegurar el futuro de sus seres queridos.</p>
+                <p>Obtener la protección adecuada es fundamental para seguir avanzando en la vida, brinda tranquilidad y seguridad financiera en caso de situaciones inesperadas o imprevistas.</p>
                 <div css={css`display: flex;`} >
-                    <Button bg={true}>Cotiza tu seguro</Button>
+                    <Button bg={true} href='#seguros'>Cotiza tu seguro</Button>
                 </div>
             </ContainerText>
             <ContainerAchievements>

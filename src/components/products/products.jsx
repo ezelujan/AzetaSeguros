@@ -23,15 +23,15 @@ const Products = () => {
     if (!products.length) return false;
 
     return (
-        <Background>
-            <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} fetchpriority="low" rotateImg={true} />
+        <Background id='seguros'>
+            {/* <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} fetchpriority="low" rotateImg={true} /> */}
             {products.map(product => (
                 <Product
                     key={product.id}
                     product={product}
                 />
             ))}
-            <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} fetchpriority="low" />
+            {/* <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} fetchpriority="low" /> */}
         </Background>
     );
 };
@@ -42,7 +42,7 @@ export const Background = styled.div`
     align-items: center;
     gap: 2rem;
     background-color: var(--bgHeader);
-    padding: 10rem;
+    padding: 10rem 15rem;
 `;
 
 const Img = styled.img`

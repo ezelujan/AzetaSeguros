@@ -5,7 +5,9 @@ import Image from 'gatsby-image';
 const Ally = ({ ally }) => {
     return (
         <ContainerIcon>
-            <Image fluid={ally.icon.fluid} />
+            <a href={ally.link} target='_blank'>
+                <Image fluid={ally.icon.fluid} />
+            </a>
         </ContainerIcon>
     );
 };

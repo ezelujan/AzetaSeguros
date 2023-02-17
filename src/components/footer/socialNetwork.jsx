@@ -5,7 +5,9 @@ import styled from '@emotion/styled';
 const SocialNetwork = ({ network }) => {
     return (
         <ContainerIllistation>
-            <Image fluid={network.icon.fluid}/>
+            <a href={network.link} target='_blank'>
+                <Image fluid={network.icon.fluid}/>
+            </a>
         </ContainerIllistation>
     );
 }
