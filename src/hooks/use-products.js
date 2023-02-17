@@ -8,6 +8,7 @@ const useProducts = () => {
                     nodes {
                         id
                         title
+                        link
                         description
                         icon {
                             fluid {
@@ -23,6 +24,7 @@ const useProducts = () => {
     return data.allDatoCmsProduct.nodes.map((product) => ({
         id: product.id,
         title: product.title,
+        link: product.link,
         description: product.description,
         icon: product.icon,
     }));

@@ -12,7 +12,7 @@ const Product = ({ product }) => {
                 <h2>{ product.title }</h2>
                 <p>{ product.description }</p>
             </Text>
-            <Button bg={false}>Cotizar</Button>
+            <Button bg={false} href={product.link} target='_blank'>Cotizar</Button>
         </ContenedorProducto>
     );
 }
