@@ -10,9 +10,7 @@ const useAllies = () => {
                         name
                         link
                         icon {
-                            fluid {
-                                ...GatsbyDatoCmsFluid
-                            }
+                            gatsbyImageData
                         }
                     }
                 }

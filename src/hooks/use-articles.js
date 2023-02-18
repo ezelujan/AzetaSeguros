@@ -10,9 +10,7 @@ const useArticles = () => {
                         title
                         description
                         icon {
-                            fluid(imgixParams: { fm: "png", auto: "compress" }) {
-                                ...GatsbyDatoCmsFluid
-                            }
+                            gatsbyImageData
                         }
                     }
                 }

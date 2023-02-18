@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from '@emotion/styled';
-import Image from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const ProductHeader = () => {
     const { allDatoCmsProductheader } = useStaticQuery(
@@ -13,9 +13,7 @@ const ProductHeader = () => {
                         description
                         descriptionoptional
                         illustration {
-                            fluid {
-                                ...GatsbyDatoCmsFluid
-                            }
+                            gatsbyImageData
                         }
                     }
                 }
@@ -24,6 +22,7 @@ const ProductHeader = () => {
     );
 
     const { title, description, descriptionoptional, illustration } = allDatoCmsProductheader.nodes[0];
+    const image = getImage(illustration);
 
     return (
         <Background>
@@ -33,7 +32,7 @@ const ProductHeader = () => {
             </FloatWindow>
             <ContainerHome>
                 <ContainerIllustration>
-                    <Image fluid={illustration.fluid} />
+                    <GatsbyImage image={image} alt={title} />
                 </ContainerIllustration>
                 <ContainerText>
                     <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>

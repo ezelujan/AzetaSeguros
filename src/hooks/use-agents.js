@@ -10,9 +10,7 @@ const useAgents = () => {
                         name
                         link
                         illustration {
-                            fluid {
-                                ...GatsbyDatoCmsFluid
-                            }
+                            gatsbyImageData
                         }
                     }
                 }

@@ -1,14 +1,18 @@
 import React from 'react';
-import Image from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from '@emotion/styled';
 
-const Sponsor = ({ sponsor }) => (
-    <ContainerSponsor id="sponsor">
-        <a href={sponsor.link} target='_blank'>
-            <Image fluid={sponsor.image.fluid} />
-        </a>
-    </ContainerSponsor>
-);
+const Sponsor = ({ sponsor }) => {
+    const image = getImage(sponsor.image);
+
+    return (
+        <ContainerSponsor id="sponsor">
+            <a href={sponsor.link} target="_blank">
+                <GatsbyImage image={image} alt={sponsor.name} />
+            </a>
+        </ContainerSponsor>
+    );
+};
 
 const ContainerSponsor = styled.div`
     width: 30rem;

@@ -10,9 +10,7 @@ const useSponsors = () => {
                         name
                         link
                         image {
-                            fluid(maxWidth: 600, imgixParams: { fm: "png", auto: "compress" }) {
-                                ...GatsbyDatoCmsFluid
-                            }
+                            gatsbyImageData
                         }
                     }
                 }

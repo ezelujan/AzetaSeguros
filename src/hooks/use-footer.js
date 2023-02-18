@@ -10,9 +10,7 @@ const useFooter = () => {
                         name
                         link
                         icon {
-                            fluid {
-                                ...GatsbyDatoCmsFluid
-                            }
+                            gatsbyImageData
                         }
                     }
                 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from '@emotion/styled';
-import Image from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import useAllies from '../../hooks/use-allies';
 import Ally from '../allies/ally';
 
@@ -14,9 +14,7 @@ const Allies = () => {
                         title
                         description
                         illustration {
-                            fluid {
-                                ...GatsbyDatoCmsFluid
-                            }
+                            gatsbyImageData
                         }
                     }
                 }
@@ -25,6 +23,7 @@ const Allies = () => {
     );
 
     const { title, description, illustration } = allDatoCmsAllyheader.nodes[0];
+    const image = getImage(illustration);
 
     const allies = useAllies();
     if (!allies.length) return false;
@@ -45,7 +44,7 @@ const Allies = () => {
                     </ListAllies>
                 </ContainerText>
                 <ContainerIllustration>
-                    <Image fluid={illustration.fluid} />
+                    <GatsbyImage image={image} alt={title} />
                 </ContainerIllustration>
             </WhyChooseSection>
         </Background>

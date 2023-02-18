@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import Image from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Button } from './ui';
 
 const Home = () => {
@@ -14,9 +14,7 @@ const Home = () => {
                         title
                         description
                         illustration {
-                            fluid {
-                                ...GatsbyDatoCmsFluid
-                            }
+                            gatsbyImageData
                         }
                     }
                 }
@@ -25,9 +23,10 @@ const Home = () => {
     );
 
     const { title, description, illustration } = allDatoCmsHome.nodes[0];
+    const image = getImage(illustration);
 
     return (
-        <Background id='inicio'>
+        <Background id="inicio">
             <FloatWindow>
                 <h2>25 millones+ Clientes</h2>
                 <p>La gente confía en nosotros para asegurar lo que es importante para ellos.</p>
@@ -44,13 +43,22 @@ const Home = () => {
                     <Span>Azeta Seguros para todos</Span>
                     <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
                     <p>{description}</p>
-                    <div css={css` display: flex; gap: 2rem; `} >
-                        <Button bg={true} href='#seguros'>Solicitar producto</Button>
-                        <Button bg={false} href="#articles">Leer más</Button>
+                    <div
+                        css={css`
+                            display: flex;
+                            gap: 2rem;
+                        `}
+                    >
+                        <Button bg={true} href="#seguros">
+                            Solicitar producto
+                        </Button>
+                        <Button bg={false} href="#articles">
+                            Leer más
+                        </Button>
                     </div>
                 </ContainerText>
                 <ContainerIllustration>
-                    <Image fluid={illustration.fluid} />
+                    <GatsbyImage image={image} alt={title} />
                 </ContainerIllustration>
             </ContainerHome>
         </Background>
@@ -94,7 +102,8 @@ const FloatWindow = styled.div`
 const ContainerAvatar = styled.div`
     display: flex;
     padding-left: 1.5rem;
-    img, div {
+    img,
+    div {
         width: 4rem;
         height: 4rem;
         display: flex;
@@ -127,7 +136,7 @@ const ContainerText = styled.div`
     background-color: white;
     border-radius: 0 10rem 0 0;
     @media (max-width: 768px) {
-        text-align: center;   
+        text-align: center;
     }
     h1 {
         line-height: 1.2;

@@ -1,13 +1,15 @@
 import React from 'react';
-import Image from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Button } from '../ui';
 import styled from '@emotion/styled';
 
 const Agent = ({ agent }) => {
+    const image = getImage(agent.illustration);
+
     return (
         <Background>
             <ContainerIllistation>
-                <Image fluid={agent.illustration.fluid}/>
+                <GatsbyImage image={image} alt={agent.name} />
             </ContainerIllistation>
             <Text>
                 <h2>{agent.name}</h2>
