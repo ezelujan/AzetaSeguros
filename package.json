@@ -14,6 +14,11 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
+  "engines" : { 
+    "npm" : ">=8.0.0",
+    "node" : ">=18.0.0"
+  },
+  "engineStrict": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
