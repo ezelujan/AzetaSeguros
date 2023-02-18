@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Image from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const Ally = ({ ally }) => {
+    const image = getImage(ally.icon);
     return (
         <ContainerIcon>
             <a href={ally.link} target='_blank'>
-                <Image fluid={ally.icon.fluid} />
+                <GatsbyImage image={image} alt={ally.name} />
             </a>
         </ContainerIcon>
     );

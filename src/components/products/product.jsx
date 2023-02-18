@@ -1,12 +1,14 @@
 import React from 'react';
-import Image from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from '@emotion/styled';
 
 const Product = ({ product }) => {
+    const image = getImage(product.icon);
+
     return (
         <ContenedorProducto>
             <ContenedorImg>
-                <Image fluid={product.icon.fluid} />
+                <GatsbyImage image={image} alt={product.title} />
             </ContenedorImg>
             <Text>
                 <h2>{ product.title }</h2>

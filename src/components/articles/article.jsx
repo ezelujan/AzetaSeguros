@@ -1,31 +1,35 @@
 import React from 'react';
-import Image from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
 const colors = ['#FFF8E1', '#EDEFFF', '#FFF3EF'];
 
-const Article = ({ article, index }) => (
-    <ContenedorArticle>
-        <Header 
-            css={css`
-                background-color: ${colors[index]};
-            `}
-        >
-            <ContainerImage
+const Article = ({ article, index }) => {
+    const image = getImage(article.icon);
+
+    return (
+        <ContenedorArticle>
+            <Header 
                 css={css`
-                    padding: ${index === 2 ? '0 1rem' : '0'};
+                    background-color: ${colors[index]};
                 `}
             >
-                <Image fluid={article.icon.fluid} />
-            </ContainerImage>
-            <h2>{article.title}</h2>
-        </Header>
-        <Text>
-            <p>{article.description}</p>
-        </Text>
-    </ContenedorArticle>
-)
+                <ContainerImage
+                    css={css`
+                        padding: ${index === 2 ? '0 1rem' : '0'};
+                    `}
+                >
+                    <GatsbyImage image={image} alt={article.title} />
+                </ContainerImage>
+                <h2>{article.title}</h2>
+            </Header>
+            <Text>
+                <p>{article.description}</p>
+            </Text>
+        </ContenedorArticle>
+    )
+}
 
 const ContenedorArticle = styled.div`
     display: flex;

@@ -1,12 +1,14 @@
 import React from 'react';
-import Image from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from '@emotion/styled';
 
 const SocialNetwork = ({ network }) => {
+    const image = getImage(network.icon);
+
     return (
         <ContainerIllistation>
             <a href={network.link} target='_blank'>
-                <Image fluid={network.icon.fluid}/>
+            <GatsbyImage image={image} alt={network.name} />
             </a>
         </ContainerIllistation>
     );

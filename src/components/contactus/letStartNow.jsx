@@ -1,7 +1,7 @@
 import React from 'react';
-import Image from 'gatsby-image';
 import styled from '@emotion/styled';
 import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Button } from '../ui';
 
 const LetStartNow = () => {
@@ -13,14 +13,10 @@ const LetStartNow = () => {
                         title
                         description
                         illustrationizq {
-                            fluid {
-                                ...GatsbyDatoCmsFluid
-                            }
+                            gatsbyImageData
                         }
                         illustrationright {
-                            fluid {
-                                ...GatsbyDatoCmsFluid
-                            }
+                            gatsbyImageData
                         }
                     }
                 }
@@ -29,12 +25,14 @@ const LetStartNow = () => {
     );
 
     const { title, description, illustrationizq, illustrationright } = allDatoCmsLetstart.nodes[0];
+    const imageizq = getImage(illustrationizq);
+    const imageright = getImage(illustrationright);
 
     return (
         <Background>
             <LetStartSection>
                 <ContainerIllustrationIzq>
-                    <Image fluid={illustrationizq.fluid} />
+                    <GatsbyImage image={imageizq} alt={title} />
                 </ContainerIllustrationIzq>
                 <ContainerText>
                     <h1>{title}</h1>
@@ -42,7 +40,7 @@ const LetStartNow = () => {
                     <Button bg={true} href='#seguros'>Cotizar ahora mismo</Button>
                 </ContainerText>
                 <ContainerIllustrationRight>
-                    <Image fluid={illustrationright.fluid} />
+                    <GatsbyImage image={imageright} alt={title} />
                 </ContainerIllustrationRight>
             </LetStartSection>
         </Background>

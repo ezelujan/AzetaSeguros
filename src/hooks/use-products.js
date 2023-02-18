@@ -11,9 +11,7 @@ const useProducts = () => {
                         link
                         description
                         icon {
-                            fluid {
-                                ...GatsbyDatoCmsFluid
-                            }
+                            gatsbyImageData
                         }
                     }
                 }
