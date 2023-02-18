@@ -13,7 +13,7 @@ const Agent = ({ agent }) => {
             </ContainerIllistation>
             <Text>
                 <h2>{agent.name}</h2>
-                <Button bg={false} href={agent.link}>Contactar</Button>
+                <Button bg={false} href={agent.link} target='_blank'>Contactar</Button>
             </Text>
         </Background>
     );
