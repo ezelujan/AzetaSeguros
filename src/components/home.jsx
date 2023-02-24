@@ -68,7 +68,7 @@ const Home = () => {
 const Background = styled.div`
     position: relative;
     @media (min-width: 768px) {
-        background: linear-gradient(to right, white 25%, var(--bgHeader) 25%, var(--bgHeader) 50%);
+        background: linear-gradient(to right, white 40%, var(--bgHeader) 10%, var(--bgHeader) 50%);
     }
 `;
 

@@ -26,6 +26,7 @@ const Header = () => {
     );
 
     const [offset, setOffset] = useState(0);
+    const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
 
     useEffect(() => {
         const onScroll = () => setOffset(window.pageYOffset);
@@ -34,6 +35,8 @@ const Header = () => {
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
+
+    const onClickBurgerMenu = () => setOpenBurgerMenu(!openBurgerMenu);
 
     return (
         <HeaderDiv css={offset > 0 ? css`
@@ -58,7 +61,16 @@ const Header = () => {
                         </ul>
                     </nav>
                 </Menu>
-                <Button bg={true} href={allDatoCmsSocialnetwork.nodes[0].link} target='_blank'>Contáctanos</Button>
+                <Button css={css`
+                    @media (max-width: 1000px) {
+                        font-size: var(--fsz18);
+                    }
+                `} bg={true} href={allDatoCmsSocialnetwork.nodes[0].link} target='_blank'>Contáctanos</Button>
+                <BurgerMenu onClick={onClickBurgerMenu}>
+                    <span className={openBurgerMenu ? 'line1' : 'none'}></span>
+                    <span className={openBurgerMenu ? 'line2' : 'none'}></span>
+                    <span className={openBurgerMenu ? 'line3' : 'none'}></span>
+                </BurgerMenu>
             </HeaderContent>
         </HeaderDiv>
     );
@@ -88,6 +100,10 @@ const HeaderContent = styled.div`
 const Img = styled.img`
     width: 18rem;
     height: 4.3rem;
+    @media (max-width: 1000px) {
+        width: 15rem;
+        height: 3.5rem;
+    }
 `;
 
 const Menu = styled.div`
@@ -99,6 +115,46 @@ const Menu = styled.div`
         font-size: var(--fsz20);
         color: var(--gray);
         gap: 4rem;
+        @media (max-width: 1000px) {
+            font-size: var(--fsz18);
+        }
+    }
+`;
+
+const BurgerMenu = styled.div`
+    display: none;
+    gap: 4px;
+    flex-direction: column;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    transition: .3s;
+    border-radius: 100%;
+    &:hover {
+        cursor: pointer;
+        background-color: var(--bgHeaderDrak);
+        span {
+            background-color: var(--orange80);
+        }
+    }
+    span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        transition: .3s;
+        transform-origin: 0px 100%;
+        background-color: var(--orange);
+    }
+    .line1 {
+        transform: rotate(45deg) translate(1px, -3px);
+    }
+    .line2 {
+        opacity: 0;
+        margin-left: -30px;
+    }
+    .line3 {
+        transform: rotate(-45deg) translate(2px, 4px);
     }
 `;
 
