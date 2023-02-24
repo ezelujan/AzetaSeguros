@@ -25,7 +25,6 @@ const ContenedorProducto = styled.div`
     justify-content: center;
     align-items: center;
     width: 30rem;
-    height: 43rem;
     padding: 4rem 5rem;
     background: var(--white);
     border-radius: 2rem;
@@ -34,6 +33,9 @@ const ContenedorProducto = styled.div`
     &:hover {
         cursor: pointer;
         transform: scale(1.025);
+    }
+    @media (min-width: 1420px) {
+        height: 43rem;
     }
 `
 

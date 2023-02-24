@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
@@ -25,16 +25,21 @@ const Header = () => {
         `,
     );
 
+    const [offset, setOffset] = useState(0);
+
+    useEffect(() => {
+        const onScroll = () => setOffset(window.pageYOffset);
+        // clean up code
+        window.removeEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
     return (
-        <header
-            css={css`
-                background-color: var(--bgHeader);
-                padding: 1rem;
-                /* position: sticky;
-                top: 0;
-                z-index: 1; */
-            `}
-        >
+        <HeaderDiv css={offset > 0 ? css`
+            padding: 1rem;
+            opacity: .97;
+        ` : ''}>
             <HeaderContent>
                 <a href="#">
                     <Img
@@ -43,30 +48,33 @@ const Header = () => {
                         fetchpriority="high"
                     />
                 </a>
-                <nav>
-                    <Menu>
-                        <li>
-                            <a href="#inicio">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="#seguros">Seguros</a>
-                        </li>
-                        <li>
-                            <a href="#beneficios">Beneficios</a>
-                        </li>
-                        <li>
-                            <a href="#nuestros-aliados">Nuestros Aliados</a>
-                        </li>
-                    </Menu>
-                </nav>
+                <Menu>
+                    <nav>
+                        <ul>
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#seguros">Seguros</a></li>
+                            <li><a href="#beneficios">Beneficios</a></li>
+                            <li><a href="#nuestros-aliados">Nuestros Aliados</a></li>
+                        </ul>
+                    </nav>
+                </Menu>
                 <Button bg={true} href={allDatoCmsSocialnetwork.nodes[0].link} target='_blank'>Contáctanos</Button>
             </HeaderContent>
-        </header>
+        </HeaderDiv>
     );
 };
 
+const HeaderDiv = styled.header`
+    width: 100%;
+    z-index: 100;
+    padding: 3rem;
+    position: sticky;
+    top: 0;
+    transition: 0.5s;
+    background-color: var(--bgHeader);
+`;
+
 const HeaderContent = styled.div`
-    padding: 1rem 0;
     max-width: 1200px;
     width: 95%;
     margin: 0 auto;
@@ -82,14 +90,16 @@ const Img = styled.img`
     height: 4.3rem;
 `;
 
-const Menu = styled.ul`
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: var(--fsz20);
-    color: var(--gray);
-    gap: 4rem;
+const Menu = styled.div`
+    nav ul {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: var(--fsz20);
+        color: var(--gray);
+        gap: 4rem;
+    }
 `;
 
 export default Header;
