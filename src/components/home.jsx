@@ -1,12 +1,11 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Button } from './ui';
 
 const Home = () => {
-    const { allDatoCmsHome } = useStaticQuery(
+    const { allDatoCmsHome, allDatoCmsAsset } = useStaticQuery(
         graphql`
             query {
                 allDatoCmsHome {
@@ -15,6 +14,14 @@ const Home = () => {
                         description
                         illustration {
                             gatsbyImageData
+                        }
+                    }
+                }
+                allDatoCmsAsset(filter: { basename: { in: ["persona1", "persona2", "persona3", "persona4"] } }) {
+                    nodes {
+                        filename
+                        fluid(maxWidth: 1200) {
+                            ...GatsbyDatoCmsFluid
                         }
                     }
                 }
@@ -31,10 +38,9 @@ const Home = () => {
                 <h2>25 millones+ Clientes</h2>
                 <p>La gente confía en nosotros para asegurar lo que es importante para ellos.</p>
                 <ContainerAvatar>
-                    <img src="https://unavatar.io/midudev" alt="Avatar" fetchpriority="low" />
-                    <img src="https://unavatar.io/mouredev" alt="Avatar" fetchpriority="low" />
-                    <img src="https://unavatar.io/s4vitar" alt="Avatar" fetchpriority="low" />
-                    <img src="https://unavatar.io/okbel" alt="Avatar" fetchpriority="low" />
+                    {allDatoCmsAsset.nodes.map(avatar => (
+                        <img src={avatar.fluid.src} alt="Avatar" fetchpriority="low" />
+                    ))}
                     <div>25m+</div>
                 </ContainerAvatar>
             </FloatWindow>
@@ -43,19 +49,14 @@ const Home = () => {
                     <Span>Azeta Seguros para todos</Span>
                     <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
                     <p>{description}</p>
-                    <div
-                        css={css`
-                            display: flex;
-                            gap: 2rem;
-                        `}
-                    >
+                    <ContainerButtons>
                         <Button bg={true} href="#seguros">
                             Solicitar producto
                         </Button>
                         <Button bg={false} href="#articles">
                             Leer más
                         </Button>
-                    </div>
+                    </ContainerButtons>
                 </ContainerText>
                 <ContainerIllustration>
                     <GatsbyImage image={image} alt={title} />
@@ -75,6 +76,7 @@ const Background = styled.div`
 const FloatWindow = styled.div`
     top: 30%;
     left: 50%;
+    z-index: 10;
     width: 20rem;
     height: 20rem;
     display: block;
@@ -96,6 +98,9 @@ const FloatWindow = styled.div`
         font-size: var(--fsz16);
         color: var(--grayWhite80);
         font-weight: 400;
+    }
+    @media (max-width: 768px) {
+        display: none;
     }
 `;
 
@@ -137,6 +142,7 @@ const ContainerText = styled.div`
     border-radius: 0 10rem 0 0;
     @media (max-width: 768px) {
         text-align: center;
+        padding-top: 3rem;
     }
     h1 {
         line-height: 1.2;
@@ -144,6 +150,12 @@ const ContainerText = styled.div`
         font-size: var(--fsz110);
         width: 70%;
         color: var(--gray);
+        @media (max-width: 1040px) {
+            font-size: var(--fsz80);
+        }
+        @media (max-width: 910px) {
+            font-size: var(--fsz60);
+        }
         @media (max-width: 768px) {
             margin: 0 auto;
             text-align: center;
@@ -161,6 +173,14 @@ const ContainerText = styled.div`
         @media (max-width: 768px) {
             margin: 3rem auto;
         }
+    }
+`;
+
+const ContainerButtons = styled.div`
+    display: flex;
+    gap: 2rem;
+    @media (max-width: 768px) {
+        justify-content: center;
     }
 `;
 

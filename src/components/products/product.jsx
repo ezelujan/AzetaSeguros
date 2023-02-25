@@ -39,8 +39,8 @@ const ContenedorProducto = styled.div`
 `
 
 const ContenedorImg = styled.div`
-    width: 7.5rem;
-    padding: 1rem;
+    width: 5rem;
+    padding: 1.5rem;
     margin-bottom: 3rem;
     background: var(--white);
     box-shadow: 0px 0px 50px rgba(131, 134, 153, 0.19);

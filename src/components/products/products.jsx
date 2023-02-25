@@ -53,7 +53,7 @@ const Products = () => {
 
     return (
         <Background>
-            <ContainerProducts id="seguros">
+            <ContainerProducts id="productos">
                 {products.length > maxSlides && maxSlides > 1 ? (
                     <Img
                         onClick={handlePrevious}

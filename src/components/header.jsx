@@ -51,21 +51,30 @@ const Header = () => {
                         fetchpriority="high"
                     />
                 </a>
-                <Menu>
+
+                <Menu open={openBurgerMenu}>
                     <nav>
                         <ul>
-                            <li><a href="#inicio">Inicio</a></li>
-                            <li><a href="#seguros">Seguros</a></li>
-                            <li><a href="#beneficios">Beneficios</a></li>
-                            <li><a href="#nuestros-aliados">Nuestros Aliados</a></li>
+                            <li><a href="#inicio" onClick={onClickBurgerMenu}>Inicio</a></li>
+                            <li><a href="#productos" onClick={onClickBurgerMenu}>Productos</a></li>
+                            <li><a href="#beneficios" onClick={onClickBurgerMenu}>Beneficios</a></li>
+                            <li><a href="#nuestros-aliados" onClick={onClickBurgerMenu}>Nuestros Aliados</a></li>
                         </ul>
                     </nav>
+                    <ContainerButton>
+                        <Button bg={true} onClick={onClickBurgerMenu} href={allDatoCmsSocialnetwork.nodes[0].link} target='_blank'>Contáctanos</Button>
+                    </ContainerButton>
                 </Menu>
+
                 <Button css={css`
                     @media (max-width: 1000px) {
                         font-size: var(--fsz18);
                     }
+                    @media (max-width: 840px) {
+                        display: none;
+                    }
                 `} bg={true} href={allDatoCmsSocialnetwork.nodes[0].link} target='_blank'>Contáctanos</Button>
+
                 <BurgerMenu onClick={onClickBurgerMenu}>
                     <span className={openBurgerMenu ? 'line1' : 'none'}></span>
                     <span className={openBurgerMenu ? 'line2' : 'none'}></span>
@@ -90,11 +99,9 @@ const HeaderContent = styled.div`
     max-width: 1200px;
     width: 95%;
     margin: 0 auto;
-    @media (min-width: 768px) {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 `;
 
 const Img = styled.img`
@@ -103,6 +110,13 @@ const Img = styled.img`
     @media (max-width: 1000px) {
         width: 15rem;
         height: 3.5rem;
+    }
+`;
+
+const ContainerButton = styled.div`
+    display: none;
+    @media (max-width: 840px) {
+        display: block;
     }
 `;
 
@@ -119,9 +133,27 @@ const Menu = styled.div`
             font-size: var(--fsz18);
         }
     }
+    @media (max-width: 840px) {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 50px;
+        position: fixed;
+        gap: 6rem;
+        display: ${props => props.open ? 'flex' : 'none'};
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--bgHeader);
+        transition: all .3s;
+        nav ul {
+            flex-direction: column;
+        }
+    }
 `;
 
 const BurgerMenu = styled.div`
+    z-index: 100;
     display: none;
     gap: 4px;
     flex-direction: column;
@@ -131,6 +163,9 @@ const BurgerMenu = styled.div`
     padding: 12px;
     transition: .3s;
     border-radius: 100%;
+    @media (max-width: 840px) {
+        display: flex;
+    }
     &:hover {
         cursor: pointer;
         background-color: var(--bgHeaderDrak);

@@ -37,8 +37,10 @@ const ContenedorArticle = styled.div`
     background-color: var(--white);
     box-shadow: 0px 0px 50px rgba(139, 141, 164, 0.17);
     border-radius: 2rem;
-    margin-bottom: 15rem;
     padding: 2.5rem 0;
+    @media (min-width: 841px) {
+        margin-bottom: 15rem;
+    }
 `;
 
 const Header = styled.div`

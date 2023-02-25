@@ -100,6 +100,9 @@ const ContainerText = styled.div`
         font-weight: 400;
         font-size: var(--fsz110);
         color: var(--gray);
+        @media (max-width: 1200px) {
+            font-size: var(--fsz80);
+        }
         @media (max-width: 768px) {
             margin: 0 auto;
             text-align: center;

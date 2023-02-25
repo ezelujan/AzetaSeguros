@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { graphql, useStaticQuery  } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import useFooter from '../../hooks/use-footer';
+import useProducts from '../../hooks/use-products';
 import SocialNetwork from './socialNetwork';
 
 const Footer = () => {
@@ -10,15 +11,17 @@ const Footer = () => {
             query {
                 allDatoCmsAsset(filter: { basename: { eq: "logo" } }) {
                     nodes {
-                        notes,
+                        notes
                         fluid(maxWidth: 1200) {
                             ...GatsbyDatoCmsFluid
                         }
                     }
                 }
             }
-        `
+        `,
     );
+
+    const products = useProducts();
 
     const footer = useFooter();
     if (!footer.length) return false;
@@ -27,49 +30,42 @@ const Footer = () => {
         <ContainerFooter>
             <ListFooter>
                 <ContainerIcons>
-                    <Img src={allDatoCmsAsset.nodes[0].fluid.src} alt={allDatoCmsAsset.nodes[0].notes} fetchpriority="high" />
+                    <Img
+                        src={allDatoCmsAsset.nodes[0].fluid.src}
+                        alt={allDatoCmsAsset.nodes[0].notes}
+                        fetchpriority="high"
+                    />
                     <ContainerSocialMedia>
-                        {footer.map(network => (
-                            <SocialNetwork
-                                key={network.id}
-                                network={network}
-                            />
+                        {footer.map((network) => (
+                            <SocialNetwork key={network.id} network={network} />
                         ))}
                     </ContainerSocialMedia>
                 </ContainerIcons>
-                <ContainerList>
-                    <h2>Productos</h2>
-                    <ul>
-                        <li id="selected">Seguro de vida</li>
-                        <li>Seguro de salud</li>
-                        <li>Seguro de hogar</li>
-                        <li>Seguro de auto</li>
-                    </ul>
-                </ContainerList>
-                <ContainerList>
-                    <h2>Características</h2>
-                    <ul>
-                        <li>Sugerencias</li>
-                        <li>API</li>
-                        <li>Giveback</li>
-                        <li>Renters</li>
-                    </ul>
-                </ContainerList>
+                {products.length ? (
+                    <ContainerList>
+                        <h2>Productos</h2>
+                        <ul>
+                            {products.map((product) => (
+                                <li key={product.id}><a href='#productos'>{product.title}</a></li>
+                            ))}
+                        </ul>
+                    </ContainerList>
+                ) : null}
                 <ContainerList>
                     <h2>Compañia</h2>
                     <ul>
-                        <li>Únete al equipo</li>
-                        <li>Asuntos legales</li>
-                        <li>Inversionistas</li>
-                        <li>Reseñas</li>
+                        <li><a href="">Únete al equipo</a></li>
+                        <li><a href="">Asuntos legales</a></li>
+                        <li><a href="">Inversionistas</a></li>
+                        <li><a href="">Reseñas</a></li>
                     </ul>
                 </ContainerList>
                 <ContainerList>
                     <h2>Recursos</h2>
                     <ul>
-                        <li>Blog</li>
-                        <li>Transparencia</li>
-                        <li>Comunidad</li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Transparencia</a></li>
+                        <li><a href="">Comunidad</a></li>
                     </ul>
                 </ContainerList>
             </ListFooter>
@@ -83,41 +79,39 @@ const Footer = () => {
             </Copyright>
         </ContainerFooter>
     );
-}
+};
 
 const ContainerFooter = styled.footer`
     padding-bottom: 5rem;
     max-width: 1200px;
     width: 95%;
     margin: 0 auto;
-    @media (min-width: 768px) {
-        display: flex;
-        flex-direction: column;
-        gap: 4rem;
-    }
-`
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+`;
 
 const ListFooter = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-`
+`;
 
 const ContainerIcons = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
-`
+`;
 
 const Img = styled.img`
     width: 18rem;
     height: 4.3rem;
-`
+`;
 
 const ContainerSocialMedia = styled.div`
     display: flex;
     gap: 1rem;
-`
+`;
 
 const ContainerList = styled.div`
     h2 {
@@ -132,25 +126,30 @@ const ContainerList = styled.div`
         flex-direction: column;
         gap: 1rem;
         li {
-            font-weight: 400;
-            font-size: var(--fsz18);
-            color: var(--grayWhite80);
+            a {
+                font-weight: 400;
+                font-size: var(--fsz18);
+                color: var(--grayWhite80);
+            }
             &:hover {
                 cursor: pointer;
+            }
+            a:hover {
+                color: var(--blue);
             }
         }
         #selected {
             color: var(--blue);
         }
     }
-`
+`;
 
 const Divider = styled.div`
     display: block;
     width: 100%;
     height: 1px;
     background-color: var(--grayWhite15);
-`
+`;
 
 const Copyright = styled.div`
     display: flex;
@@ -165,6 +164,6 @@ const Copyright = styled.div`
         display: flex;
         gap: 2rem;
     }
-`
+`;
 
 export default Footer;

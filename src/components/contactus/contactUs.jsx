@@ -53,11 +53,10 @@ const ContactUsSection = styled.div`
 `
 
 const ContainerAgents = styled.div`
-    @media (min-width: 768px) {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 5rem;
-    }
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
 `
  
 export default ContactUs;
