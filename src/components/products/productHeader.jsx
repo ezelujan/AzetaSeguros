@@ -48,7 +48,7 @@ const Background = styled.div`
     position: relative;
     @media (min-width: 768px) {
         background: blue;
-        background: linear-gradient(to right, white 25%, var(--bgHeader) 25%, var(--bgHeader) 50%);
+        background: linear-gradient(to right, white 40%, var(--bgHeader) 10%, var(--bgHeader) 50%);
     }
 `;
 
@@ -100,6 +100,9 @@ const ContainerText = styled.div`
         font-weight: 400;
         font-size: var(--fsz110);
         color: var(--gray);
+        @media (max-width: 1200px) {
+            font-size: var(--fsz80);
+        }
         @media (max-width: 768px) {
             margin: 0 auto;
             text-align: center;

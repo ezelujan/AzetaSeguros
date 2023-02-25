@@ -14,9 +14,9 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
-  "engines" : { 
-    "npm" : ">=8.0.0",
-    "node" : ">=18.0.0"
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=18.0.0"
   },
   "engineStrict": true,
   "dependencies": {
@@ -32,6 +32,7 @@
     "gatsby-transformer-sharp": "^5.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "swiper": "^9.0.5"
   }
 }

@@ -20,6 +20,7 @@ const Agent = ({ agent }) => {
 }
 
 const Background = styled.div`
+    width: 35rem;
     border-radius: 2rem;
     background-color: var(--white);
     box-shadow: 0px 0px 50px rgba(139, 141, 164, 0.17);

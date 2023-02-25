@@ -24,8 +24,10 @@ const ContenedorProducto = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30rem;
-    padding: 4rem 5rem;
+    /* width: 30rem; */
+    height: 43rem;
+    margin: 3rem 1.5rem;
+    padding: 3rem 5rem;
     background: var(--white);
     border-radius: 2rem;
     box-shadow: 0px 40px 80px rgba(120, 122, 141, 0.07);
@@ -34,14 +36,11 @@ const ContenedorProducto = styled.div`
         cursor: pointer;
         transform: scale(1.025);
     }
-    @media (min-width: 1420px) {
-        height: 43rem;
-    }
 `
 
 const ContenedorImg = styled.div`
-    width: 7.5rem;
-    padding: 1rem;
+    width: 5rem;
+    padding: 1.5rem;
     margin-bottom: 3rem;
     background: var(--white);
     box-shadow: 0px 0px 50px rgba(131, 134, 153, 0.19);

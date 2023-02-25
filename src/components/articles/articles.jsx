@@ -40,9 +40,15 @@ const SectionBlog = styled.section`
         width: 50%;
         margin-bottom: 6rem;
         color: var(--gray);
-        @media (max-width: 768px) {
-            margin: 0 auto;
-            text-align: center;
+        @media (max-width: 840px) {
+            font-size: var(--fsz60);
+            width: 80%;
+        }
+        @media (max-width: 37.5em) {
+            font-size: var(--fsz50);
+        }
+        @media (max-width: 30em) {
+            width: 95%;
         }
         span {
             color: var(--blue);
@@ -55,6 +61,14 @@ const ContenedorArticle = styled.div`
     display: flex;
     flex-direction: row;
     gap: 4rem;
+    @media (max-width: 62.5em) {
+        gap: 1.5rem;
+    }
+    @media (max-width: 840px) {
+        flex-direction: column;
+        gap: 4rem;
+        margin-bottom: 15rem;
+    }
 `;
 
 export default Articles;

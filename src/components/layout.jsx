@@ -19,10 +19,11 @@ const Layout = (props) => {
                     :root {
                         --white: white;
                         --white80: #ffffffcc;
-                        --bgHeader: #ECEEFF;
+                        --bgHeader: #eceeff;
+                        --bgHeaderDrak: #e1e2f0;
                         --blue: #3B4EFF;
                         --orange: #F76031;
-                        --orange80: rgba(247, 95, 49, 0.8);
+                        --orange80: #f75f31cc;
                         --yellow: #FFF2CB;
                         --gray: #232323;
                         --gray80: #232323CC;
@@ -39,6 +40,8 @@ const Layout = (props) => {
                         --fsz25: 1.75rem;
                         --fsz30: 2.25rem;
                         --fsz40: 2.75rem;
+                        --fsz50: 3.5rem;
+                        --fsz60: 4.5rem;
                         --fsz80: 5.2rem;
                         --fsz90: 6.5rem;
                         --fsz110: 7.2rem;
