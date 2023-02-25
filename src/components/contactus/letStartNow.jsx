@@ -37,7 +37,7 @@ const LetStartNow = () => {
                 <ContainerText>
                     <h1>{title}</h1>
                     <p>{description}</p>
-                    <Button bg={true} href='#seguros'>Cotizar ahora mismo</Button>
+                    <Button bg={true} href='#productos'>Cotizar ahora mismo</Button>
                 </ContainerText>
                 <ContainerIllustrationRight>
                     <GatsbyImage image={imageright} alt={title} />

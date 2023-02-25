@@ -50,7 +50,7 @@ const Home = () => {
                     <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
                     <p>{description}</p>
                     <ContainerButtons>
-                        <Button bg={true} href="#seguros">
+                        <Button bg={true} href="#productos">
                             Solicitar producto
                         </Button>
                         <Button bg={false} href="#articles">
