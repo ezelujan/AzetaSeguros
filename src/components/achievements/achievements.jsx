@@ -11,7 +11,12 @@ const Achievements = () => {
             <ContainerText>
                 <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
                 <p>Obtener la protección adecuada es fundamental para seguir avanzando en la vida, brinda tranquilidad y seguridad financiera en caso de situaciones inesperadas o imprevistas.</p>
-                <div css={css`display: flex;`} >
+                <div css={css`
+                    display: flex;
+                    @media (max-width: 840px) {
+                        margin-bottom: 5rem;
+                    }
+                `} >
                     <Button bg={true} href='#seguros'>Cotiza tu seguro</Button>
                 </div>
             </ContainerText>
@@ -70,7 +75,7 @@ const AchievementsSection = styled.section`
     max-width: 1200px;
     width: 95%;
     margin: 0 auto;
-    @media (min-width: 768px) {
+    @media (min-width: 840px) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 1rem;
@@ -78,6 +83,13 @@ const AchievementsSection = styled.section`
 `
 
 const ContainerText = styled.div`
+    @media (max-width: 840px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
     @media (max-width: 768px) {
         text-align: center;   
     }
@@ -87,9 +99,15 @@ const ContainerText = styled.div`
         font-size: var(--fsz80);
         width: 95%;
         color: var(--gray);
-        @media (max-width: 768px) {
+        @media (max-width: 62.5em) {
+            font-size: var(--fsz60);
+        }
+        @media (max-width: 48em) {
             margin: 0 auto;
             text-align: center;
+        }
+        @media (max-width: 37.5em) {
+            font-size: var(--fsz50);
         }
         span {
             color: var(--blue);
@@ -101,20 +119,27 @@ const ContainerText = styled.div`
         margin: 3rem 0 5rem 0;
         font-size: var(--fsz20);
         color: var(--gray80);
-        @media (max-width: 768px) {
+        @media (max-width: 48em) {
             margin: 3rem auto;
+        }
+        @media (max-width: 37.5em) {
+            font-size: var(--fsz18);
         }
     }
 `;
  
 const ContainerAchievements = styled.div`
-    @media (min-width: 840px) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 2rem;
-        #second {
-            transform: translate(0%, 8%);
-        }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    #second {
+        transform: translate(0%, 8%);
+    }
+    @media (max-width: 840px) {
+        padding-left: 5rem;
+    }
+    @media (max-width: 37.5em) {
+        padding-left: 0rem;
     }
 `
 
@@ -132,23 +157,48 @@ const Achievement = styled.div`
     padding: 2rem 3rem;
     text-align: center;
     border-radius: 2rem;
+    @media (max-width: 62.5em) {
+        width: 24rem;
+        height: 18rem;
+    }
+    @media (max-width: 37.5em) {
+        width: 19rem;
+        height: 16rem;
+    }
     h2 {
         font-weight: 400;
         color: var(--gray);
         margin-bottom: 1rem;
         font-size: var(--fsz20);
+        @media (max-width: 62.5em) {
+            font-size: var(--fsz18);
+        }
+        @media (max-width: 37.5em) {
+            font-size: var(--fsz16);
+        }
     }
     h3 {
         font-weight: 500;
         color: var(--blue);
         margin-bottom: 2rem;
         font-size: var(--fsz40);
+        @media (max-width: 62.5em) {
+            font-size: var(--fsz30);
+        }
+        @media (max-width: 37.5em) {
+            font-size: var(--fsz25);
+        }
     }
     p {
         color: var(--gray80);
         font-weight: 400;
         font-size: var(--fsz18);
-
+        @media (max-width: 62.5em) {
+            font-size: var(--fsz16);
+        }
+        @media (max-width: 37.5em) {
+            font-size: var(--fsz14);
+        }
     }
 `
 

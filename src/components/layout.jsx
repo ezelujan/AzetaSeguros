@@ -42,6 +42,7 @@ const Layout = (props) => {
                         --fsz40: 2.75rem;
                         --fsz50: 3.5rem;
                         --fsz60: 4.5rem;
+                        --fsz70: 4.9rem;
                         --fsz80: 5.2rem;
                         --fsz90: 6.5rem;
                         --fsz110: 7.2rem;
