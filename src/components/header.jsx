@@ -29,11 +29,14 @@ const Header = () => {
     const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
 
     useEffect(() => {
-        const onScroll = () => setOffset(window.pageYOffset);
-        // clean up code
-        window.removeEventListener('scroll', onScroll);
-        window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
+        const isBrowser = typeof window !== "undefined";
+        if (isBrowser) {
+            const onScroll = () => setOffset(window.pageYOffset);
+            // clean up code
+            window.removeEventListener('scroll', onScroll);
+            window.addEventListener('scroll', onScroll, { passive: true });
+            return () => window.removeEventListener('scroll', onScroll);
+        }
     }, []);
 
     const onClickBurgerMenu = () => setOpenBurgerMenu(!openBurgerMenu);
