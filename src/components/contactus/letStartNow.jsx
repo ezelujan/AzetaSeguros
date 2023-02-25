@@ -67,7 +67,11 @@ const ContainerIllustrationIzq = styled.div`
     padding: 0 8rem;
     margin-left: -5%;
     border-radius: 0 0 10rem 0;
-    @media (max-width: 768px) {
+    @media (max-width: 1250px) {
+        margin-left: -15%;
+        padding: 0 4rem;
+    }
+    @media (max-width: 48em) {
         display: none;
     }
 `
@@ -84,12 +88,34 @@ const ContainerText = styled.div`
         color: var(--white);
         font-weight: 700;
         margin-bottom: 3.5rem;
+        @media (max-width: 90em) {
+            font-size: var(--fsz60);
+        }
+        @media (max-width: 62.5em) {
+            font-size: var(--fsz50);
+        }
+        @media (max-width: 37.5em) {
+            font-size: var(--fsz40);
+        }
     }
     p {
         font-size: var(--fsz25);
         color: var(--white80);
         font-weight: 400;
         margin-bottom: 5rem;
+        @media (max-width: 90em) {
+            font-size: var(--fsz20);
+        }
+        @media (max-width: 62.5em) {
+            font-size: var(--fsz18);
+        }
+        @media (max-width: 48em) {
+            width: 70%;
+        }
+        @media (max-width: 37.5em) {
+            width: 95%;
+            font-size: var(--fsz17);
+        }
     }
 `
 
@@ -97,7 +123,11 @@ const ContainerIllustrationRight = styled.div`
     padding: 0 8rem;
     margin-right: -5%;
     border-radius: 0 0 10rem 0;
-    @media (max-width: 768px) {
+    @media (max-width: 1250px) {
+        margin-right: -5%;
+        padding: 0 4rem;
+    }
+    @media (max-width: 48em) {
         display: none;
     }
 `

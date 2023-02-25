@@ -119,7 +119,8 @@ const Img = styled.img`
 const ContainerButton = styled.div`
     display: none;
     @media (max-width: 840px) {
-        display: block;
+        display: flex;
+        justify-content: center;
     }
 `;
 

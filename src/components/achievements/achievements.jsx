@@ -141,6 +141,12 @@ const ContainerAchievements = styled.div`
     @media (max-width: 37.5em) {
         padding-left: 0rem;
     }
+    @media (max-width: 30em) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `
 
 const ColumnAchievements = styled.div`

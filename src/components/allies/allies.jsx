@@ -103,6 +103,9 @@ const ListAllies = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     column-gap: 1rem;
     row-gap: 2rem;
+    @media (max-width: 48em) {
+        padding-left: 2rem;
+    }
 `;
 
 const ContainerIllustration = styled.div`

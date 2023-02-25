@@ -36,6 +36,9 @@ const ContenedorProducto = styled.div`
         cursor: pointer;
         transform: scale(1.025);
     }
+    @media (max-width: 30em) {
+        padding: 3rem 2rem;
+    }
 `
 
 const ContenedorImg = styled.div`
