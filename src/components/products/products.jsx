@@ -100,6 +100,12 @@ const Products = () => {
 export const Background = styled.div`
     background-color: var(--bgHeader);
     padding: 10rem 15rem;
+    @media (max-width: 48em) {
+        padding: 5rem 14rem;
+    }
+    @media (max-width: 37.5em) {
+        padding: 5rem 5em;
+    }
 `;
 
 export const ContainerProducts = styled.div`

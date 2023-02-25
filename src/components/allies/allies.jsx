@@ -100,7 +100,7 @@ const ContainerText = styled.div`
 const ListAllies = styled.div`
     /* margin-right: 10rem; */
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     column-gap: 1rem;
     row-gap: 2rem;
 `;
@@ -109,7 +109,19 @@ const ContainerIllustration = styled.div`
     /* padding: 0 5rem 0 0; */
     margin-left: 20%;
     border-radius: 0 0 10rem 0;
-    @media (max-width: 768px) {
+    @media (max-width: 75em) {
+        margin-left: 10%;
+        margin-top: 5%;
+    }
+    @media (max-width: 62.5em) {
+        margin-left: 5%;
+        margin-top: 10%;
+    }
+    @media (max-width: 840px) {
+        margin-left: 0;
+        margin-top: 20%;
+    }
+    @media (max-width: 48em) {
         display: none;
     }
 `;

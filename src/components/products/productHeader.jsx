@@ -37,7 +37,7 @@ const ProductHeader = () => {
                 <ContainerText>
                     <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
                     <p>{description}</p>
-                    <p>{descriptionoptional}</p>
+                    <p className="description_optional">{descriptionoptional}</p>
                 </ContainerText>
             </ContainerHome>
         </Background>
@@ -46,9 +46,9 @@ const ProductHeader = () => {
 
 const Background = styled.div`
     position: relative;
-    @media (min-width: 768px) {
-        background: blue;
-        background: linear-gradient(to right, white 40%, var(--bgHeader) 10%, var(--bgHeader) 50%);
+    background: linear-gradient(to right, white 40%, var(--bgHeader) 10%, var(--bgHeader) 50%);
+    @media (max-width: 48em) {
+        background: var(--bgHeader);
     }
 `;
 
@@ -66,6 +66,15 @@ const FloatWindow = styled.div`
     background-color: white;
     transform: translate(-50%, -50%);
     box-shadow: 0px 0px 100px rgba(165, 165, 165, 0.25);
+    @media (max-width: 90em) {
+        left: 40%;
+    }
+    @media (max-width: 75em) {
+        left: 37%;
+    }
+    @media (max-width: 62.5em) {
+        display: none;
+    }
     h2 {
         font-size: var(--fsz20);
         font-weight: 600;
@@ -83,15 +92,30 @@ const ContainerHome = styled.div`
     max-width: 1200px;
     width: 95%;
     margin: 0 auto;
-    @media (min-width: 768px) {
+    @media (min-width: 48em) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 1rem;
+    }
+    @media (max-width: 48em) {
+        width: 80%;
+    }
+    @media (max-width: 30em) {
+        width: 95%;
     }
 `;
 
 const ContainerText = styled.div`
     padding: 8rem 0 0 8rem;
+    @media (max-width: 75em) {
+        padding: 8rem 0 0 4rem;
+    }
+    @media (max-width: 62.5em) {
+        padding: 8rem 0 0 2rem;
+        .description_optional {
+            display: none;
+        }
+    }
     @media (max-width: 768px) {
         text-align: center;
     }
@@ -100,10 +124,13 @@ const ContainerText = styled.div`
         font-weight: 400;
         font-size: var(--fsz110);
         color: var(--gray);
-        @media (max-width: 1200px) {
+        @media (max-width: 75em) {
             font-size: var(--fsz80);
         }
-        @media (max-width: 768px) {
+        @media (max-width: 62.5em) {
+            font-size: var(--fsz70);
+        }
+        @media (max-width: 48em) {
             margin: 0 auto;
             text-align: center;
         }
@@ -116,8 +143,8 @@ const ContainerText = styled.div`
         margin: 3rem 0 3rem 0;
         font-size: var(--fsz20);
         color: var(--gray80);
-        @media (max-width: 768px) {
-            margin: 3rem auto;
+        @media (max-width: 48em) {
+            margin: 3rem 0 0 0;
         }
     }
 `;
@@ -128,7 +155,10 @@ const ContainerIllustration = styled.div`
     margin-left: -40%;
     margin-top: -8%;
     border-radius: 0 0 10rem 0;
-    @media (max-width: 768px) {
+    @media (max-width: 62.5em) {
+        padding: 0 1rem 0 0;
+    }
+    @media (max-width: 48em) {
         display: none;
     }
 `;

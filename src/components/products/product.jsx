@@ -26,7 +26,7 @@ const ContenedorProducto = styled.div`
     align-items: center;
     /* width: 30rem; */
     height: 43rem;
-    margin: 3rem 1.5rem;
+    margin: 4rem 1.5rem;
     padding: 3rem 5rem;
     background: var(--white);
     border-radius: 2rem;
