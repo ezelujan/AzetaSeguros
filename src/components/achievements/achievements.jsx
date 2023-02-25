@@ -17,7 +17,7 @@ const Achievements = () => {
                         margin-bottom: 5rem;
                     }
                 `} >
-                    <Button bg={true} href='#seguros'>Cotiza tu seguro</Button>
+                    <Button bg={true} href='#productos'>Cotiza tu seguro</Button>
                 </div>
             </ContainerText>
             <ContainerAchievements>
