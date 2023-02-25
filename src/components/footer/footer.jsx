@@ -95,6 +95,11 @@ const ListFooter = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    @media (max-width: 48em) {
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    }
 `;
 
 const ContainerIcons = styled.div`

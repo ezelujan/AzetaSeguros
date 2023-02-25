@@ -42,8 +42,14 @@ const ContactUsSection = styled.div`
         width: 70%;
         color: var(--gray);
         margin-bottom: 10rem;
-        @media (max-width: 768px) {
+        @media (max-width: 48em) {
+            font-size: var(--fsz60);
             margin: 0 auto;
+            padding-bottom: 5rem;
+            text-align: center;
+        }
+        @media (max-width: 37.5em) {
+            font-size: var(--fsz50);
         }
         span {
             color: var(--blue);
@@ -57,6 +63,24 @@ const ContainerAgents = styled.div`
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+    @media (max-width: 747px) {
+        padding-left: 18rem;
+    }
+    @media (max-width: 650px) {
+        padding-left: 14rem;
+    }
+    @media (max-width: 525px) {
+        padding-left: 11rem;
+    }
+    @media (max-width: 30em) {
+        padding-left: 8rem;
+    }
+    @media (max-width: 25em) {
+        padding-left: 5rem;
+    }
+    @media (max-width: 20.625em) {
+        padding-left: 0;
+    }
 `
  
 export default ContactUs;

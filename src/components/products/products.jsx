@@ -106,6 +106,9 @@ export const Background = styled.div`
     @media (max-width: 37.5em) {
         padding: 5rem 5em;
     }
+    @media (max-width: 30em) {
+        padding: 5rem 1em;
+    }
 `;
 
 export const ContainerProducts = styled.div`
