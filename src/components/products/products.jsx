@@ -30,18 +30,22 @@ const Products = () => {
     const products = useProducts();
     if (!products.length) return false;
 
-    const { width } = useScreenSize();
     const [swiperRef, setSwiperRef] = useState();
     const [countProduts, setCountProduts] = useState(products.length);
     const [maxSlides, setMaxSlides] = useState(countProduts);
 
-    useEffect(() => {
-        if (countProduts >= 5 && width < 2300) setMaxSlides(5)
-        if (countProduts >= 4 && width < 2000) setMaxSlides(4)
-        if (countProduts >= 3 && width < 1500) setMaxSlides(3)
-        if (countProduts >= 2 && width < 1300) setMaxSlides(2)
-        if (countProduts >= 1 && width < 1000) setMaxSlides(1)
-    }, [width]);
+    const isBrowser = typeof window !== 'undefined';
+    if (isBrowser) {
+        const { width } = useScreenSize();
+    
+        useEffect(() => {
+            if (countProduts >= 5 && width < 2300) setMaxSlides(5)
+            if (countProduts >= 4 && width < 2000) setMaxSlides(4)
+            if (countProduts >= 3 && width < 1500) setMaxSlides(3)
+            if (countProduts >= 2 && width < 1300) setMaxSlides(2)
+            if (countProduts >= 1 && width < 1000) setMaxSlides(1)
+        }, [width]);
+    }
 
     const handlePrevious = useCallback(() => {
         swiperRef?.slidePrev();
