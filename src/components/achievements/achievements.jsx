@@ -1,74 +1,104 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { Button } from '../ui';
+import useBenefits from '../../hooks/use-benefits';
 
 const Achievements = () => {
-    const title = '<h1>Obtén <span>protección</span> adecuada para seguir <span>avanzando</span></h1>';
+    const { allDatoCmsBenefitheader } = useStaticQuery(
+        graphql`
+            query {
+                allDatoCmsBenefitheader {
+                    nodes {
+                        title
+                        description
+                    }
+                }
+            }
+        `,
+    );
+
+    const benefits = useBenefits();
+    if (!benefits.length) return false;
+
+    const { title, description } = allDatoCmsBenefitheader.nodes[0];
 
     return (
-        <AchievementsSection id='beneficios'>
+        <AchievementsSection id="beneficios">
             <ContainerText>
                 <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
-                <p>Obtener la protección adecuada es fundamental para seguir avanzando en la vida, brinda tranquilidad y seguridad financiera en caso de situaciones inesperadas o imprevistas.</p>
-                <div css={css`
-                    display: flex;
-                    @media (max-width: 840px) {
-                        margin-bottom: 5rem;
-                    }
-                `} >
-                    <Button bg={true} href='#productos'>Cotiza tu seguro</Button>
+                <p>{description}</p>
+                <div
+                    css={css`
+                        display: flex;
+                        @media (max-width: 840px) {
+                            margin-bottom: 5rem;
+                        }
+                    `}
+                >
+                    <Button bg={true} href="#productos">
+                        Cotiza tu seguro
+                    </Button>
                 </div>
             </ContainerText>
             <ContainerAchievements>
-                <ColumnAchievements id='first'>
+                <ColumnAchievements id="first">
                     <Achievement
                         css={css`
-                            background-color: #F0F1FF;
-                            h3 { color: #3B4EFF; }
+                            background-color: #f0f1ff;
+                            h3 {
+                                color: #3b4eff;
+                            }
                         `}
                     >
-                        <h2>Ahorros</h2>
-                        <h3>Más de $700</h3>
-                        <p>Ahorro medio anual de los conductores que se pasan a Progresivo y ahorran</p>
+                        <h2>{benefits[0].title}</h2>
+                        <h3>{benefits[0].subtitle}</h3>
+                        <p>{benefits[0].description}</p>
                     </Achievement>
                     <Achievement
                         css={css`
-                            background-color: #FFF8E0;
-                            h3 { color: #FFCE33; }
+                            background-color: #fff8e0;
+                            h3 {
+                                color: #ffce33;
+                            }
                         `}
                     >
-                        <h2>Soporte</h2>
-                        <h3>24/7 horas</h3>
-                        <p>Ahorro medio anual de los conductores que se pasan a Progresivo y ahorran</p>
+                        <h2>{benefits[1].title}</h2>
+                        <h3>{benefits[1].subtitle}</h3>
+                        <p>{benefits[1].description}</p>
                     </Achievement>
                 </ColumnAchievements>
-                <ColumnAchievements id='second'>
+                <ColumnAchievements id="second">
                     <Achievement
                         css={css`
-                            background-color: #FFF0EB;
-                            h3 { color: #F76031; }
+                            background-color: #fff0eb;
+                            h3 {
+                                color: #f76031;
+                            }
                         `}
                     >
-                        <h2>Clientes</h2>
-                        <h3>25 millones+</h3>
-                        <p>Ahorro medio anual de los conductores que se pasan a Progresivo y ahorran</p>
+                        <h2>{benefits[2].title}</h2>
+                        <h3>{benefits[2].subtitle}</h3>
+                        <p>{benefits[2].description}</p>
                     </Achievement>
                     <Achievement
                         css={css`
-                            background-color: #F0F6FF;
-                            h3 { color: #3485FF; }
+                            background-color: #f0f6ff;
+                            h3 {
+                                color: #3485ff;
+                            }
                         `}
                     >
-                        <h2>Premios</h2>
-                        <h3>50+ ganados</h3>
-                        <p>Ahorro medio anual de los conductores que se pasan a Progresivo y ahorran</p>
+                        <h2>{benefits[3].title}</h2>
+                        <h3>{benefits[3].subtitle}</h3>
+                        <p>{benefits[3].description}</p>
                     </Achievement>
                 </ColumnAchievements>
             </ContainerAchievements>
         </AchievementsSection>
     );
-}
+};
 
 const AchievementsSection = styled.section`
     padding: 10rem 0;
@@ -80,7 +110,7 @@ const AchievementsSection = styled.section`
         grid-template-columns: repeat(2, 1fr);
         column-gap: 1rem;
     }
-`
+`;
 
 const ContainerText = styled.div`
     @media (max-width: 840px) {
@@ -91,7 +121,7 @@ const ContainerText = styled.div`
         text-align: center;
     }
     @media (max-width: 768px) {
-        text-align: center;   
+        text-align: center;
     }
     h1 {
         line-height: 1.2;
@@ -127,7 +157,7 @@ const ContainerText = styled.div`
         }
     }
 `;
- 
+
 const ContainerAchievements = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -147,7 +177,7 @@ const ContainerAchievements = styled.div`
         justify-content: center;
         align-items: center;
     }
-`
+`;
 
 const ColumnAchievements = styled.div`
     display: grid;
@@ -155,7 +185,7 @@ const ColumnAchievements = styled.div`
     justify-content: space-between;
     align-items: center;
     row-gap: 2rem;
-`
+`;
 
 const Achievement = styled.div`
     width: 26rem;
@@ -206,6 +236,6 @@ const Achievement = styled.div`
             font-size: var(--fsz14);
         }
     }
-`
+`;
 
 export default Achievements;
