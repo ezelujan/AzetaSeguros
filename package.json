@@ -1,38 +1,38 @@
 {
-  "name": "azeta-seguros",
-  "version": "1.0.0",
-  "private": true,
-  "description": "azeta-seguros",
-  "author": "Ezequiel Luján Escobar",
-  "keywords": [
-    "gatsby"
-  ],
-  "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
-  },
-  "engines": {
-    "npm": ">=8.0.0",
-    "node": ">=18.0.0"
-  },
-  "engineStrict": true,
-  "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "gatsby": "^5.6.1",
-    "gatsby-plugin-emotion": "^8.6.0",
-    "gatsby-plugin-image": "^3.6.0",
-    "gatsby-plugin-manifest": "^5.6.0",
-    "gatsby-plugin-sharp": "^5.6.0",
-    "gatsby-source-datocms": "^5.0.4",
-    "gatsby-source-filesystem": "^5.6.0",
-    "gatsby-transformer-sharp": "^5.6.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
-    "swiper": "^9.0.5"
-  }
+    "name": "azeta-seguros",
+    "version": "1.0.0",
+    "private": true,
+    "description": "azeta-seguros",
+    "author": "Ezequiel Luján Escobar",
+    "keywords": [
+        "gatsby"
+    ],
+    "scripts": {
+        "develop": "gatsby develop",
+        "start": "gatsby develop",
+        "build": "gatsby build",
+        "serve": "gatsby serve",
+        "clean": "gatsby clean"
+    },
+    "engines": {
+        "npm": ">=8.0.0",
+        "node": ">=18.0.0"
+    },
+    "engineStrict": true,
+    "dependencies": {
+        "@emotion/react": "^11.11.4",
+        "@emotion/styled": "^11.11.5",
+        "gatsby": "^5.13.5",
+        "gatsby-plugin-emotion": "^8.13.1",
+        "gatsby-plugin-image": "^3.13.1",
+        "gatsby-plugin-manifest": "^5.13.1",
+        "gatsby-plugin-sharp": "^5.13.1",
+        "gatsby-source-datocms": "^5.1.5",
+        "gatsby-source-filesystem": "^5.13.1",
+        "gatsby-transformer-sharp": "^5.13.1",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-helmet": "^6.1.0",
+        "swiper": "^9.0.5"
+    }
 }
